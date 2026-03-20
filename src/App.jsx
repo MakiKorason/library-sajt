@@ -27,8 +27,8 @@ import AnimatedPage from './components/Department/AnimatedPage';
 import ImageModal from './components/ImageModal';
 import { AnimatePresence } from 'framer-motion';
 import NotFound from './components/NotFound';
-import cobbis from './images/cobbis.webp';
-import logoDigitalna from './images/logoDigitalna.webp'
+// import cobbis from './images/cobbis.webp';
+// import logoDigitalna from './images/logoDigitalna.webp'
 
 function InnerApp() {
   const location = useLocation();
