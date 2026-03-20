@@ -1,0 +1,20 @@
+
+
+  .brown-table {
+    border:#362101;
+    font-size: larger;
+  }
+  
+  .brown-table th {
+    background-color: #ad9e876e;
+    color:#362101;
+    
+  }
+  
+  .brown-table td {
+    background-color:  #f3f0e970;
+    color:#362101;
+    font-weight: bold;
+  }
+  
+  

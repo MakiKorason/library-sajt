@@ -1,0 +1,51 @@
+{
+    "short_name": "Градска библиотека Рума",
+    "name": "Градска библиотека Рума – књиге, догађаји, дигитална библиотека",
+    "description": "Званична веб страница Градске библиотеке Рума",
+    "icons": [
+      {
+        "src": "/logo.webp",
+        "sizes": "512x512",
+        "type": "image/webp",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "/logo.webp",
+        "sizes": "192x192",
+        "type": "image/webp",
+        "purpose": "any"
+      },
+      {
+        "src": "/logo.webp",
+        "sizes": "144x144",
+        "type": "image/webp",
+        "purpose": "any"
+      },
+      {
+        "src": "/logo.webp",
+        "sizes": "96x96",
+        "type": "image/webp",
+        "purpose": "any"
+      },
+      {
+        "src": "/logo.webp",
+        "sizes": "72x72",
+        "type": "image/webp",
+        "purpose": "any"
+      },
+      {
+        "src": "/logo.webp",
+        "sizes": "48x48",
+        "type": "image/webp",
+        "purpose": "any"
+      }
+    ],
+    "start_url": "/",
+    "display": "standalone",
+    "theme_color": "#f3f2ee",
+    "background_color": "#f3f2ee",
+    "orientation": "portrait",
+    "scope": "/",
+    "lang": "sr"
+  }
+  

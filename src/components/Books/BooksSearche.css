@@ -1,0 +1,40 @@
+
+.cobiss-card {
+  background: linear-gradient(135deg, #f6f5f270, #bfb09b6e,#887f6c6e);
+  border: 1px solid #ddd;
+  border-radius: 2rem;
+  padding: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  text-align: justify;
+
+}
+
+.cobiss-link-text {
+  color: #66452c;
+  text-decoration: none;
+}
+
+.cobiss-link-text:hover {
+  text-decoration: underline;
+}
+
+.cobiss-image {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+h2 {
+  font-family: "Garamond", serif;
+}
+.cobiss-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; 
+  margin-top: -400px; 
+}
+.border-end {
+  border-right: 2px solid black;
+  padding-right: 15px; 
+}

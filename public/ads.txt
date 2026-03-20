@@ -1,0 +1,4 @@
+# ads.txt file for bibliotekaruma.rs
+# This file is used for programmatic advertising
+# If you don't use ads, you can leave this file empty or add your ad network information here
+

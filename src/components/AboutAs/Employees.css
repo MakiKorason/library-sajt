@@ -1,0 +1,28 @@
+
+.employees-text {
+    font-weight: bold; 
+    font-size: 2rem;
+    color:#66452c; 
+animation: fadeInText 3s forwards;
+  animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+  font-family: 'Garamond', serif;
+}
+
+
+.employee-card {
+    color:#66452c; 
+    background: linear-gradient(135deg, #f3f0e970, #ad9e876e);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4); 
+   border: 2px solid #ccc; 
+  border-radius: 1rem;  
+     text-align: center;
+}
+ .employees{
+    text-align: center;
+    color: #66452c;
+    font-size: 2rem;
+    font-weight: bold;
+    animation: fadeInText 4.5s forwards;
+ }
+
+

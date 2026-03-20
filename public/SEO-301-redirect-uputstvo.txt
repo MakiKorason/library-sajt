@@ -1,0 +1,32 @@
+SEO Izveštaj: 301 preusmeravanje sa ne-www na www (cPanel/.htaccess)
+===============================================================
+
+1. Pronađi ili kreiraj .htaccess fajl
+------------------------------------
+- U cPanel-u idi na File Manager.
+- U root folderu tvog sajta (najčešće public_html), pronađi fajl .htaccess.
+- Ako ga nema, napravi novi fajl sa imenom .htaccess.
+
+2. Dodaj pravila za preusmeravanje
+----------------------------------
+Na početak (ili kraj) .htaccess fajla dodaj sledeće linije:
+
+RewriteEngine On
+# Preusmeravanje sa ne-www na www
+RewriteCond %{HTTP_HOST} ^bibliotekaruma\.rs [NC]
+RewriteRule ^(.*)$ https://www.bibliotekaruma.rs/$1 [L,R=301]
+
+3. Sačuvaj fajl i testiraj
+--------------------------
+- Sačuvaj izmene.
+- Otvori browser i probaj da pristupiš sajtu bez www (npr. http://bibliotekaruma.rs).
+- Trebalo bi automatski da te prebaci na https://www.bibliotekaruma.rs.
+
+4. (Opcionalno) Ukloni ili izmeni stara pravila
+-----------------------------------------------
+Ako već imaš neka Rewrite pravila za www ili https, proveri da se ne dupliraju ili ne prave konflikt.
+
+Napomena:
+---------
+Ovo preusmeravanje važi za sve stranice i SEO je friendly (301 redirect).
+Ako imaš specifična pravila u .htaccess fajlu, pošalji mi sadržaj tog fajla pa ću ti pomoći da ga optimizuješ! 

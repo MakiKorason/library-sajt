@@ -1,0 +1,581 @@
+.carousel-control-prev,
+.carousel-control-next {
+ display: none;
+ color: black;
+   
+}
+.carousel-indicators {
+ z-index: 10;
+}
+
+.carousel-caption{
+animation: flashEffect 10s forwards;
+font-size: 1.5rem;
+}
+.carousel-caption-text {
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 1px 1px 3px #000;
+  font-size: 1.35em;
+  letter-spacing: 0.5px;
+}
+.image-carousel {
+ max-width: 100%; 
+max-height: auto;
+ opacity: 0;
+ animation: flashEffect 10s forwards; 
+ object-fit: cover;
+ height: 215vh;
+}
+
+/* Ensure carousel works on all screen sizes */
+.carousel {
+  overflow: hidden;
+}
+
+.carousel-inner {
+  width: 100%;
+}
+
+.carousel-item {
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .image-carousel {
+    height: 350px;
+  }
+
+  .carousel-caption p {
+    font-size: 14px;
+    padding: 5px;
+  }
+  
+  /* Optimizacija za karusel u oglasnoj tabli na telefonima */
+  .container-image {
+    max-width: 280px !important;
+    width: 100% !important;
+  }
+  
+  /* Smanjivanje gap-a na telefonima */
+  .carousel-container {
+    gap: 10px !important;
+  }
+  
+  .carousel-images {
+    gap: 15px !important;
+  }
+  
+  /* Smanjivanje grba za digitalni fond na mobilnim uređajima */
+  
+  
+  /* Smanjivanje loga za književni konkurs na mobilnim uređajima */
+  .konkurs-logo {
+    width: 35% !important;
+  }
+}
+
+
+@keyframes flashEffect {
+ 0% {
+   opacity: 0;
+   transform: scale(0.9); 
+ }
+ 50% {
+   opacity: 1;
+   transform: scale(1); 
+ }
+ 100% {
+   opacity: 1;
+   transform: scale(1);
+ }
+}
+
+.container-button{
+   color: black;
+   font-size: 50%;
+   padding: 0.6rem 0.7rem;
+   background-color: #f3f2ee;
+   border-radius: 50%;
+   font-family: 'Arial';
+   margin: 0 auto;
+   display: block;
+   width: fit-content;
+}
+
+/* Kritični stilovi koji se učitavaju odmah */
+.container-library {
+ width: 95%;
+ max-width: 95%;
+ padding: 2.5rem;
+ background-color: #f3f2ee;
+ border-radius: 8px;
+ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+ border: 1px solid #3f2c11;
+ position: relative;
+ margin: 0 auto;
+}
+
+.container-title {
+ font-size: 3rem;
+ font-weight: bold;
+ text-align: center;
+ margin-bottom: 10px;
+ color:#3f2c11;
+ font-family:'Arsenal';
+ animation: fadeInText 3s forwards;
+ animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+}
+
+@media (max-width: 768px) {
+ .container-title {
+   font-size: 1.3rem;
+   line-height: 1.4;
+   padding: 0 15px;
+ }
+}
+
+/* Nekritični stilovi koji se mogu učitati kasnije */
+
+/* Optimizacija animacija */
+.container-image {
+  transition: transform 0.3s ease;
+  will-change: transform;
+ }
+
+/* Optimizacija za print */
+@media print {
+  .container-button,
+  .carousel-indicators {
+    display: none !important;
+  }
+}
+
+/* Optimizacija za dark mode */
+@media (prefers-color-scheme: dark) {
+  .container-library {
+    background-color: #1a1a1a;
+    color: #fff;
+  }
+}
+
+.container-day{
+max-width: 95%;
+padding: 3%;
+box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7);
+
+}
+.container-icon {
+ color: #3f2c11; 
+ font-size:3rem; 
+ text-align: center;
+}
+
+.container-icon.left-align {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.5em;
+  margin-right: 1em;
+  text-align: left;
+}
+
+.container-text {
+ color: #3f2c11;
+ font-size: 25px;
+ margin-bottom: 30px;
+ text-align: left;
+ opacity: 0; 
+ animation: fadeInText 3s forwards;
+ animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+ word-spacing: -1.8px; 
+ font-family: 'Arial';
+}
+
+.about-details-toggle {
+  margin-top: 10px;
+}
+
+.about-more-details {
+  overflow: hidden;
+  transition: max-height 0.35s ease, opacity 0.2s ease;
+}
+
+.about-more-details.collapsed {
+  max-height: 0;
+  opacity: 0;
+}
+
+.about-more-details.expanded {
+  max-height: 900px; /* dovoljno za ceo dodatni tekst */
+  opacity: 1;
+}
+
+.about-more-details p {
+  margin-top: 14px;
+}
+@media (max-width: 768px) {
+ .container-text {
+   font-size: 0.9rem;
+   line-height: 1.4;
+   padding: 0 15px;
+ }
+}
+@keyframes fadeInText {
+ 0% {
+   opacity: 0; 
+   color: white; 
+ }
+ 100% {
+   opacity: 1; 
+   color:#66452c;
+  
+   
+ }
+}
+ 
+.image-event {
+  max-width: 100%; 
+  border-radius: 5%;
+  transition: transform 0.3s ease;
+}
+
+.image-event:hover {
+ transform: scale(1.2); 
+}
+
+.container-iframe {
+ position: relative;
+ width: 100%;
+ padding-bottom: 56.25%; 
+ height: 0;
+ overflow: hidden;
+}
+
+.container-iframe iframe {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+}
+
+.image-background {
+ background-image:url('../images/biblioteka.webp');
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+ padding: 5% 0; 
+ color: white; 
+ position:relative;
+ height: 60%;
+}
+
+.image-background::before {
+ content: '';
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background: rgba(255, 255, 255, 0.7); 
+}
+
+.react-calendar {
+ background-color: #f4f4f4;
+ border-radius: 10px;
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  padding: 24px;
+ position: relative;
+  font-size: 1.3rem;
+  width: 100%;
+  max-width: 420px;
+  margin-left: 2rem;
+}
+
+/* Povećanje kontrasta teksta u kalendaru (WCAG AA) */
+.react-calendar abbr {
+  color: #1a1a1a;
+  text-decoration: none;
+}
+
+.react-calendar__month-view__weekdays abbr {
+  color: #1a1a1a;
+  font-weight: 700;
+}
+
+/* Ensure all abbr elements in tiles have proper contrast - default to dark text */
+.react-calendar__tile abbr {
+  color: #1a1a1a;
+}
+
+/* Override for tiles with dark backgrounds - use white text */
+.react-calendar__tile--active abbr,
+.react-calendar__tile--range abbr,
+.react-calendar__tile--rangeStart abbr,
+.react-calendar__tile--rangeEnd abbr,
+.react-calendar__tile--rangeBothEnds abbr {
+  color: #ffffff !important;
+}
+
+.react-calendar__navigation button {
+  color: #1a1a1a;
+}
+
+.react-calendar__tile {
+  color: #1a1a1a;
+}
+
+.react-calendar__month-view__days__day--neighboringMonth {
+  color: #4a4a4a;
+}
+
+.react-calendar__tile--now {
+  background: #d4c5b0;
+  color: #1a1a1a;
+}
+
+.react-calendar__tile {
+border-radius: 50%; 
+transition: background-color 0.2s ease; 
+}
+
+.react-calendar__tile.marked-date {
+  background-color: #8c5a2f; /* топлија смеђа, у складу са брендингом, боља приступачност од зелене */
+  color: #ffffff !important; 
+  font-weight: bold;
+}
+
+/* Данашњи датум – наглашен оквиром, без тамне позадине */
+
+
+
+.react-calendar__tile.marked-date:hover abbr,
+.react-calendar__tile.marked-date:focus abbr {
+  color: #ffffff !important;
+}
+
+/* Active and range states with sufficient contrast */
+.react-calendar__tile--active {
+  background: #3f2c11 !important;
+  color: #ffffff !important;
+}
+
+.react-calendar__tile--active abbr {
+  color: #ffffff !important;
+}
+
+.react-calendar__tile--range {
+  background: #5a3f1f;
+  color: #ffffff;
+}
+
+.react-calendar__tile--range abbr {
+  color: #ffffff !important;
+}
+
+.react-calendar__tile--rangeStart,
+.react-calendar__tile--rangeEnd {
+  background: #3f2c11 !important;
+  color: #ffffff !important;
+}
+
+.react-calendar__tile--rangeStart abbr,
+.react-calendar__tile--rangeEnd abbr {
+  color: #ffffff !important;
+}
+
+.react-calendar__tile--rangeBothEnds {
+  background: #3f2c11 !important;
+  color: #ffffff !important;
+}
+
+.react-calendar__tile--rangeBothEnds abbr {
+  color: #ffffff !important;
+}
+
+/* Handle --now with active/range combinations */
+.react-calendar__tile--now.react-calendar__tile--active,
+.react-calendar__tile--now.react-calendar__tile--range,
+.react-calendar__tile--now.react-calendar__tile--rangeStart,
+.react-calendar__tile--now.react-calendar__tile--rangeEnd,
+.react-calendar__tile--now.react-calendar__tile--rangeBothEnds {
+  background: #3f2c11 !important;
+  color: #ffffff !important;
+}
+
+.react-calendar__tile--now.react-calendar__tile--active abbr,
+.react-calendar__tile--now.react-calendar__tile--range abbr,
+.react-calendar__tile--now.react-calendar__tile--rangeStart abbr,
+.react-calendar__tile--now.react-calendar__tile--rangeEnd abbr,
+.react-calendar__tile--now.react-calendar__tile--rangeBothEnds abbr {
+  color: #ffffff !important;
+}
+
+/* Ensure marked dates in active/range states maintain contrast */
+.react-calendar__tile.marked-date.react-calendar__tile--active,
+.react-calendar__tile.marked-date.react-calendar__tile--range,
+.react-calendar__tile.marked-date.react-calendar__tile--rangeStart,
+.react-calendar__tile.marked-date.react-calendar__tile--rangeEnd,
+.react-calendar__tile.marked-date.react-calendar__tile--rangeBothEnds {
+  background-color: #004d00 !important;
+  color: #ffffff !important;
+}
+
+/* Ensure abbr elements in marked dates with active/range states have white text */
+.react-calendar__tile.marked-date.react-calendar__tile--active abbr,
+.react-calendar__tile.marked-date.react-calendar__tile--range abbr,
+.react-calendar__tile.marked-date.react-calendar__tile--rangeStart abbr,
+.react-calendar__tile.marked-date.react-calendar__tile--rangeEnd abbr,
+.react-calendar__tile.marked-date.react-calendar__tile--rangeBothEnds abbr {
+  color: #ffffff !important;
+}
+
+/* Handle marked-date with --now class combination */
+.react-calendar__tile.marked-date.react-calendar__tile--now {
+  background-color: #006400 !important;
+  color: #ffffff !important;
+}
+
+.react-calendar__tile.marked-date.react-calendar__tile--now abbr {
+  color: #ffffff !important;
+}
+
+/* Handle marked-date with --now and --active/--range combinations */
+.react-calendar__tile.marked-date.react-calendar__tile--now.react-calendar__tile--active,
+.react-calendar__tile.marked-date.react-calendar__tile--now.react-calendar__tile--range,
+.react-calendar__tile.marked-date.react-calendar__tile--now.react-calendar__tile--rangeStart,
+.react-calendar__tile.marked-date.react-calendar__tile--now.react-calendar__tile--rangeEnd,
+.react-calendar__tile.marked-date.react-calendar__tile--now.react-calendar__tile--rangeBothEnds {
+  background-color: #004d00 !important;
+  color: #ffffff !important;
+}
+
+.react-calendar__tile.marked-date.react-calendar__tile--now.react-calendar__tile--active abbr,
+.react-calendar__tile.marked-date.react-calendar__tile--now.react-calendar__tile--range abbr,
+.react-calendar__tile.marked-date.react-calendar__tile--now.react-calendar__tile--rangeStart abbr,
+.react-calendar__tile.marked-date.react-calendar__tile--now.react-calendar__tile--rangeEnd abbr,
+.react-calendar__tile.marked-date.react-calendar__tile--now.react-calendar__tile--rangeBothEnds abbr {
+  color: #ffffff !important;
+}
+
+/* Specific selector for the exact combination mentioned in the error */
+button.react-calendar__tile.react-calendar__month-view__days__day.marked-date abbr,
+button.react-calendar__tile.react-calendar__tile--now.react-calendar__tile--active.react-calendar__tile--range.react-calendar__tile--rangeStart.react-calendar__tile--rangeEnd.react-calendar__tile--rangeBothEnds.react-calendar__month-view__days__day abbr,
+button.react-calendar__tile.react-calendar__tile--now.react-calendar__tile--active.react-calendar__tile--range.react-calendar__tile--rangeStart.react-calendar__tile--rangeEnd.react-calendar__tile--rangeBothEnds.react-calendar__month-view__days__day.marked-date abbr {
+  color: #ffffff !important;
+  font-weight: bold;
+}
+
+/* Universal rule: any abbr inside marked-date button should be white */
+button.react-calendar__tile.marked-date abbr {
+  color: #ffffff !important;
+  font-weight: bold;
+}
+
+/* Universal rule: any abbr inside active/range buttons should be white */
+button.react-calendar__tile--active abbr,
+button.react-calendar__tile--range abbr,
+button.react-calendar__tile--rangeStart abbr,
+button.react-calendar__tile--rangeEnd abbr,
+button.react-calendar__tile--rangeBothEnds abbr {
+  color: #ffffff !important;
+}
+
+/* Universal rule: any abbr inside marked-date with any combination should be white */
+button.react-calendar__tile.marked-date.react-calendar__tile--active abbr,
+button.react-calendar__tile.marked-date.react-calendar__tile--range abbr,
+button.react-calendar__tile.marked-date.react-calendar__tile--rangeStart abbr,
+button.react-calendar__tile.marked-date.react-calendar__tile--rangeEnd abbr,
+button.react-calendar__tile.marked-date.react-calendar__tile--rangeBothEnds abbr,
+button.react-calendar__tile.marked-date.react-calendar__tile--now abbr {
+  color: #ffffff !important;
+  font-weight: bold;
+}
+
+/* Hover states with sufficient contrast */
+.react-calendar__tile:hover:not(.react-calendar__tile--disabled) {
+  background-color: #d4c5b0;
+  color: #1a1a1a;
+}
+
+.react-calendar__tile--now:hover {
+  background-color: #c4b5a0;
+  color: #1a1a1a;
+}
+
+/* Disabled states with sufficient contrast */
+.react-calendar__tile--disabled {
+  background-color: #e0e0e0;
+  color: #6a6a6a;
+}
+
+.react-calendar__tile--disabled abbr {
+  color: #6a6a6a;
+}
+
+/* Ensure navigation buttons have sufficient contrast */
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+  background-color: #d4c5b0;
+  color: #1a1a1a;
+}
+
+.react-calendar__navigation button:disabled {
+  background-color: #e0e0e0;
+  color: #6a6a6a;
+}
+
+.react-calendar__navigation__label {
+font-size: 1.2rem;
+font-weight: bold;
+color: #1a1a1a;
+}
+
+/* Custom stil za vertikalni meni preporuka */
+.nav-pills .nav-link {
+  background-color: #f3f2ee;
+  color: #3f2c11;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  border: 1px solid #b5a999;
+  transition: background 0.2s, color 0.2s;
+}
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  background-color: #f3e9d2;
+  color: #3f2c11;
+  border: 2px solid #b5a999;
+}
+
+/* Veće slike u oglasnoj tabli */
+.container-library .image-event {
+  width: 100%;
+  height: 480px;
+  display: block;
+  margin: 0 auto;
+  object-fit: cover;
+}
+
+/* Smanjen razmak između kalendara i slike u oglasnoj tabli */
+.container-library .row > .col-md-4:first-child {
+  padding-right: 0.3rem;
+}
+.container-library .row > .col-md-4:nth-child(2) {
+  padding-left: 0.3rem;
+}
+
+@media (max-width: 768px) {
+  .react-calendar {
+    padding: 6px;
+    font-size: 1rem;
+    max-width: 100%;
+    margin-left: 0;
+  }
+  
+  /* Responsive stilovi za kolаж сарадње */
+  .container-library .row .col-md-4 {
+    margin-bottom: 1rem;
+  }
+}
+

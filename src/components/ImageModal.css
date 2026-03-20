@@ -1,0 +1,58 @@
+.image-modal .modal-content {
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.image-modal .modal-header {
+  border-radius: 15px 15px 0 0;
+}
+
+.image-modal .modal-footer {
+  border-radius: 0 0 15px 15px;
+}
+
+.modal-image {
+  width: 100%;
+  height: auto;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .image-modal .modal-dialog {
+    margin: 10px;
+  }
+  
+  .modal-image {
+    max-height: 60vh;
+  }
+}
+
+@media (max-width: 576px) {
+  .image-modal .modal-dialog {
+    margin: 5px;
+  }
+  
+  .modal-image {
+    max-height: 50vh;
+  }
+}
+
+/* Clickable image styles */
+.clickable-image {
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.clickable-image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.clickable-image:active {
+  transform: scale(0.98);
+}
+
