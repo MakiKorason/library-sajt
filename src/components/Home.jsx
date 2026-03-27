@@ -1,7 +1,6 @@
 import React, { useState, useCallback, useMemo, Suspense, useEffect, useRef } from 'react';
 import './Home.css';
 import { Button, Col, Container, Row, Modal } from 'react-bootstrap';
-
 import ImageModal from './ImageModal';
 import cobbis from '../images/cobbis.webp';
 import matica from '../images/matica.webp';
@@ -10,9 +9,9 @@ import ministarstvo from '../images/ministarstvo.webp';
 import opstina from '../images/opstina.webp';
 import biblioteka from '../images/biblioteka.webp';
 import konkurs from '../images/konkurs.webp';
+import bombardovanje from '../images/bombardovanje.jpg';
 import muzej from '../images/muzej.webp';
 import kc from '../images/kc.webp';
-import bombardovanje from '../images/bombardovanje.webp'
 import turisticka from '../images/turisticka.webp';
 import miljkovic from '../images/miljkovic.webp'
 import logoDigitalna from '../images/logoDigitalna.webp'
@@ -29,11 +28,12 @@ import digitalna from '../images/digitalna.webp';
 import saradnja1 from '../images/saradnja1.webp';
 import saradnja2 from '../images/saradnja2.webp';
 import saradnja3 from '../images/saradnja3.webp';
-import ruzica from '../images/ruzica.webp'
+import bombardovanje2 from '../images/bombardovanje2.webp';
 import 'react-calendar/dist/Calendar.css';
 import AnimatedCard from './Department/AnimatedCard'; 
 import pokrajina from '../images/pokrajina.webp';
 import { Helmet } from "react-helmet-async";
+
 // Bootstrap JS is imported in index.js
 
 
@@ -72,7 +72,8 @@ const Home =()=> {
        || // фебруар (month: 1)
       isSameDay(date, EVENTS_YEAR, 2, 24) || // март (month: 2)
       isSameDay(date, EVENTS_YEAR, 2, 26) 
-      
+       ||
+      isSameDay(date, EVENTS_YEAR, 2, 31) 
          // март (month: 2)
     ) {
       return 'marked-date';
@@ -90,14 +91,14 @@ const Home =()=> {
     }
 
     // Klik na означене датуме (приказ слике у модал-у)
-    if (date.getMonth() === 1 && date.getDate() === 27) {
-      setModalImage(ruzica);
+    if (date.getMonth(bombardovanje) === 2 && date.getDate() === 31) {
+      setModalImage(bombardovanje);
       setShowImage(true);
       return;
     }
 
     if (date.getMonth() === 2 && date.getDate() === 24) {
-      setModalImage(bombardovanje);
+      setModalImage(bombardovanje2);
       setShowImage(true);
       return;
     }
@@ -106,11 +107,7 @@ const Home =()=> {
       setShowImage(true);
       return;
     }
-    if (date.getMonth() === 1 && date.getDate() === 27) {
-      setModalImage(ruzica);
-      setShowImage(true);
-      return;
-    }
+   
     if (date.getMonth() === 2 && date.getDate() === 26) {
       setModalImage(miljkovic);
       setShowImage(true);
@@ -123,8 +120,8 @@ const Home =()=> {
   const imageSets = useMemo(() => [
     // Одељење огласне табле: Хуго (11. фебруар) ближе календару, Вaсилије (6. фебруар) десно
     // Render koristi samo [0] i [1], zato pravimo setove po 2 slike.
-    [miljkovic, izlozba],
-    [bombardovanje, ruzica],
+    [bombardovanje, miljkovic],
+    [izlozba, bombardovanje2],
   ], []);
   
   const toggleImageSet = () => {
@@ -564,7 +561,7 @@ const Home =()=> {
 </Container>
 
   
-        <Container className='mt-4 mb-2'>
+        <Container className='mt-4 '>
          <Row className='text-center'>
          <Col md={4} className='mt-4'>     
          <AnimatedCard>
@@ -594,7 +591,7 @@ const Home =()=> {
        itemProp="image"
        /> </AnimatedCard>
        </Col> 
-                   <Col  md={4}  className='mt-4'>
+                   <Col  md={4}  className='mt-0'>
                   <AnimatedCard>
              <a href="https://www.facebook.com/photo/?fbid=1326535312805422&set=a.512519967540298" target="_blank" rel="noopener noreferrer" className="konkurs-link">
                <p className="container-title mb-0">
