@@ -28,7 +28,7 @@ import digitalna from '../images/digitalna.webp';
 import saradnja1 from '../images/saradnja1.webp';
 import saradnja2 from '../images/saradnja2.webp';
 import saradnja3 from '../images/saradnja3.webp';
-import bombardovanje2 from '../images/bombardovanje2.webp';
+import azbukvar from '../images/azbukovar.jpg'
 import 'react-calendar/dist/Calendar.css';
 import AnimatedCard from './Department/AnimatedCard'; 
 import pokrajina from '../images/pokrajina.webp';
@@ -70,7 +70,7 @@ const Home =()=> {
       
       isSameDay(date, EVENTS_YEAR, 2, 25)
        || // фебруар (month: 1)
-      isSameDay(date, EVENTS_YEAR, 2, 24) || // март (month: 2)
+      isSameDay(date, EVENTS_YEAR, 3, 2 ) || // март (month: 2)
       isSameDay(date, EVENTS_YEAR, 2, 26) 
        ||
       isSameDay(date, EVENTS_YEAR, 2, 31) 
@@ -97,8 +97,8 @@ const Home =()=> {
       return;
     }
 
-    if (date.getMonth() === 2 && date.getDate() === 24) {
-      setModalImage(bombardovanje2);
+    if (date.getMonth() === 3 && date.getDate() === 2) {
+      setModalImage(azbukvar);
       setShowImage(true);
       return;
     }
@@ -120,8 +120,8 @@ const Home =()=> {
   const imageSets = useMemo(() => [
     // Одељење огласне табле: Хуго (11. фебруар) ближе календару, Вaсилије (6. фебруар) десно
     // Render koristi samo [0] i [1], zato pravimo setove po 2 slike.
-    [bombardovanje, miljkovic],
-    [izlozba, bombardovanje2],
+    [azbukvar,bombardovanje],
+    [miljkovic, izlozba],
   ], []);
   
   const toggleImageSet = () => {
