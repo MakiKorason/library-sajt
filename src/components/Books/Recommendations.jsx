@@ -7,50 +7,7 @@ import AnimatedCard from '../Department/AnimatedCard';
 
 const Recommendations =()=>{
 
-  const [activeKey, setActiveKey] = useState('februar');
-  // const [genreKey, setGenreKey] = useState('roman');
-
-  // const cobissSearchUrl = (keyword) =>
-  //   `https://plus.cobiss.net/cobiss/sr/sr/bib/search?q=${encodeURIComponent(keyword)}*&db=gbru&mat=allmaterials`;
-
-  // const genreRecommendations = {
-  //   roman: [
-  //     { naslov: 'Роман', opis: 'Издвајамо пример препоруке за жанр романа.', keyword: 'роман' },
-  //     { naslov: 'Књига 1', opis: 'Књига из нашег фонда која припада роману (пример).', keyword: 'роман' },
-  //     { naslov: 'Књига 2', opis: 'Још једна романска препорука (пример).', keyword: 'роман' },
-  //   ],
-  //   triler: [
-  //     { naslov: 'Трилер', opis: 'Напети трилери који држе пажњу до краја (пример).', keyword: 'трилер' },
-  //     { naslov: 'Књига 1', opis: 'Психолошки или акциони трилер (пример).', keyword: 'трилер' },
-  //     { naslov: 'Књига 2', opis: 'Трилер који се чита у једном даху (пример).', keyword: 'трилер' },
-  //   ],
-  //   ljubavni: [
-  //     { naslov: 'Љубавни романи', opis: 'Романтике, емоције и приче о сусретима (пример).', keyword: 'љубавни' },
-  //     { naslov: 'Књига 1', opis: 'Љубавна прича из нашег фонда (пример).', keyword: 'љубавни' },
-  //     { naslov: 'Књига 2', opis: 'Још један љубавни наслов (пример).', keyword: 'љубавни' },
-  //   ],
-  //   istorijski: [
-  //     { naslov: 'Историјски романи', opis: 'Прича враћа у друга времена и велике догађаје (пример).', keyword: 'историјски' },
-  //     { naslov: 'Књига 1', opis: 'Историјски роман са снажном позадином (пример).', keyword: 'историјски' },
-  //     { naslov: 'Књига 2', opis: 'Још једна историјска препорука (пример).', keyword: 'историјски' },
-  //   ],
-  //   drama: [
-  //     { naslov: 'Драме', opis: 'Емоционалне и животне приче које остају са вама (пример).', keyword: 'драма' },
-  //     { naslov: 'Књига 1', opis: 'Драмски наслов из нашег фонда (пример).', keyword: 'драма' },
-  //     { naslov: 'Књига 2', opis: 'Још једна драма за размишљање (пример).', keyword: 'драма' },
-  //   ],
-  //   horor: [
-  //     { naslov: 'Хорори', opis: 'Страшне атмосфере и неизвесност (пример).', keyword: 'хорор' },
-  //     { naslov: 'Књига 1', opis: 'Хорор који вас држи будним (пример).', keyword: 'хорор' },
-  //     { naslov: 'Књига 2', opis: 'Још једна хорор препорука (пример).', keyword: 'хорор' },
-  //   ],
-  //   naucna_fantastika: [
-  //     { naslov: 'Научна фантастика', opis: 'Светови будућности и идеје које шире видике (пример).', keyword: 'научна фантастика' },
-  //     { naslov: 'Књига 1', opis: 'Фантастика са научним приступом (пример).', keyword: 'научна фантастика' },
-  //     { naslov: 'Књига 2', opis: 'Још један наслов из жанра фантастике (пример).', keyword: 'научна фантастика' },
-  //   ],
-  // };
-
+  const [activeKey, setActiveKey] = useState('mart');
 
     // const knjigeZaOdrasle = [
     //   {
@@ -226,6 +183,7 @@ const Recommendations =()=>{
   </script>
 </Helmet>
 <h2 className='container-title mb-2 mt-5'>Препоруке библиотекара</h2><hr/>
+
 <Container className='container-library mb-4 mt-4 ms-auto' style={{ padding: '2.5rem' }}>
   <AnimatedCard className="container mt-3, mb-5">
 
@@ -237,12 +195,11 @@ const Recommendations =()=>{
           className="nav-link active"
           data-bs-toggle="tab"
           style={{ color: '#3f2c11' }}
-          href="#home"
+          href="#menu3"
         >
-          МАРТ
+          Одељење за одрасле
         </a>
       </li>
-
       <li className="nav-item">
         <a
           className="nav-link"
@@ -267,46 +224,6 @@ const Recommendations =()=>{
     </ul>
 
     <div className="tab-content">
-
-      {/* МАРТ */}
-      <div id="home" className="container tab-pane fade show active">
-        <br/>
-        <Row>
-          <Col xs={12} md={4} lg={4} className="text-center mt-2 mt-md-0">
-        
-              <img
-                src="https://laguna.rs/_img/korice/5249/sova-samuel_bjerk_v.jpg?v=1632469089"
-                alt=""
-                loading="lazy"
-                width="300"
-                height="450"
-                itemProp="image"
-                referrerPolicy="no-referrer"
-                style={{
-                  maxWidth: '100%',
-                  height: 'auto',
-                  display: 'block',
-                  margin: '0 auto',
-                  marginTop: '2rem'
-                }}
-              />
-            
-          </Col>
-
-          <Col xs={12} md={8} lg={8}>
-            <br/>
-            <p className='container-text'>
-              <strong>Наша препорука - Одељење за одрасле</strong><br/><br/>
-              <strong>Аутор:</strong> Самуел Бјерк<br/>
-              <strong>Наслов:</strong> „Сова"<br/><br/>
-              Мрачан и изузетно напет норвешки психолошки трилер.
-              "Сова" је наставак светског бестселера "Анђео у шуми" - нова прича, али са добро познатим ликовима: Холгером Мунком и Мијом Кригер. Овога пута, као уиграни истражитељски тандем, суочавају се са новим, узнемирујућим случајем.
-              Софистицирана радња, снажна психологија ликова и атмосфера која држи пажњу до последње странице чине овај роман правим примером врхунског скандинавског ноара.
-              Књига која се не испушта из руку.
-            </p>
-          </Col>
-        </Row>
-      </div>
 
       {/* Дечије одељење */}
       <div id="menu1" className="container tab-pane fade">
@@ -335,7 +252,7 @@ const Recommendations =()=>{
 
           <Col xs={12} md={8} lg={8}>
             <p className='container-text'>
-              <strong>Наша препорука - Научно одељење</strong><br/><br/>
+              <strong>Наша препорука — Дечије одељење</strong><br/><br/>
               <strong>Аутор:</strong> Ђурђа Покрајац<br/>
               <strong>Наслов:</strong> „Путокази српских великана"<br/><br/>
               Ова лепа и корисна књига води нас кроз животе 13 величанствених личности које су оставиле неизбрисив траг градећи темеље наше науке и културе.
@@ -385,10 +302,59 @@ const Recommendations =()=>{
         </Row>
       </div>
 
-    </div>
-  </AnimatedCard>
-
-           
+      {/* Одељење за одрасле — месечна препорука и архива */}
+      <div id="menu3" className="container tab-pane fade show active">
+        <br/>
+        <h3 className="container-title" style={{ fontSize: 'clamp(1.4rem, 4vw, 2.2rem)' }}>Месечна препорука романа</h3>
+        <Row>
+          <Col xs={12} md={4} lg={4} className="text-center mt-2 mt-md-0">
+            <a
+              href="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1351685249i/9458300.jpg"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Отвори слику корице — Дневник Марте Коен"
+            >
+              <img
+                src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1351685249i/9458300.jpg"
+                alt="Дневник Марте Коен — Светислав Басара, корица књиге"
+                loading="lazy"
+                width="300"
+                height="450"
+                itemProp="image"
+                referrerPolicy="no-referrer"
+                style={{
+                  maxWidth: '100%',
+                  height: 'auto',
+                  display: 'block',
+                  margin: '0 auto',
+                  marginTop: '1rem'
+                }}
+              />
+            </a>
+          </Col>
+          <Col xs={12} md={8} lg={8}>
+            <p className='container-text'>
+              <strong>Наша препорука за април — Одељење за одрасле</strong><br/><br/>
+              <strong>Аутор:</strong> Светислав Басара<br/>
+              <strong>Наслов:</strong> „Дневник Марте Коен"<br/><br/>
+              Роман „Дневник Марте Коен" Светислав Басара доноси причу о Марти Коен, сложеној и контрадикторној личности која је истовремено приказана као сурова предводница логора за децу на Голом отоку и као дубоко трагична жена која није успела да пронађе испуњење у животу. Њен лик је обележен унутрашњим расцепом и подвојеношћу, што кулминира на самом крају, када се, иако чврсто везана за комунистичку идеологију, обраћа Богу и показује универзалну потребу за вишим смислом.
+              <br/><br/>
+              Кроз истрагу новинара који покушава да расветли околности њене смрти, Басара гради сложену мрежу питања о идентитету, истини и одговорности. Њена смрт, која се показује као убиство, на крају добија извесну правду када се открива да је убица један од бивше деце из логора.
+              <br/><br/>
+              Роман је испуњен апсурдом, филозофским и историјским слојевима, у којем се појављују разни ликови – од партијских функционера до мистичара – што додатно наглашава распад идеологија и преиспитивање „великих истина". Басара овим делом показује да човек, без обзира на идеолошка уверења, увек остаје у потрази за смислом и вишим бићем.
+            </p>
+            <Button
+              variant="secondary"
+              href="https://plus.cobiss.net/cobiss/sr/sr/search/cobib?lib=gbru&q=basara+svetislav"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Остала дела Светислава Басара у фонду библиотеке"
+              style={{ marginTop: '0.5rem' }}
+            >
+              Остала дела овог аутора
+            </Button>
+          </Col>
+        </Row>
 
             <Row><br/> <hr/>
               <Col md={3}>
@@ -420,6 +386,12 @@ const Recommendations =()=>{
                     <Nav.Item>
                     <Nav.Link eventKey="februar" className='container-text'>Фебруар</Nav.Link>
                   </Nav.Item>
+                  <Nav.Item>
+                    <Nav.Link eventKey="mart" className="container-text">Март</Nav.Link>
+                  </Nav.Item>
+                  {/* <Nav.Item>
+                    <Nav.Link eventKey="april" className="container-text">Април</Nav.Link>
+                  </Nav.Item> */}
                    
                 </Nav>
               </Col>
@@ -551,7 +523,95 @@ const Recommendations =()=>{
                   </Col>
                   </Row>
                   )}
-               
+
+                {activeKey === 'mart' && (
+                  <Row>
+                    <Col xs={12} sm={12} md={4} lg={4} xl={4} className="text-center mt-4">
+                      <img
+                        src="https://laguna.rs/_img/korice/5249/sova-samuel_bjerk_v.jpg?v=1632469089"
+                        alt="Сова — Самуел Бјерк, корица књиге"
+                        loading="lazy"
+                        width="300"
+                        height="450"
+                        className="container-image"
+                        referrerPolicy="no-referrer"
+                        style={{ maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }}
+                      />
+                    </Col>
+                    <Col xs={12} sm={12} md={8} lg={8} xl={8} className="mt-4">
+                      <p className="container-text">
+                        <strong>Наша препорука за март — Одељење за одрасле</strong>
+                        <br /><br />
+                        <strong>Аутор:</strong> Самуел Бјерк<br />
+                        <strong>Наслов:</strong> „Сова"
+                        <br /><br />
+                        Мрачан и изузетно напет норвешки психолошки трилер.
+                        „Сова" је наставак светског бестселера „Анђео у шуми" — нова прича, али са добро познатим ликовима: Холгером Мунком и Мијом Кригер. Овога пута, као уиграни истражитељски тандем, суочавају се са новим, узнемирујућим случајем.
+                        Софистицирана радња, снажна психологија ликова и атмосфера која држи пажњу до последње странице чине овај роман правим примером врхунског скандинавског ноара.
+                        Књига која се не испушта из руку.
+                      </p>
+                      <Button
+                        variant="secondary"
+                        href="https://plus.cobiss.net/cobiss/sr/sr/search/cobib/results?q=%D0%B1%D1%98%D0%B5%D1%80%D0%BA%2C%20%D1%81%D0%B0%D0%BC%D1%83%D0%B5%D0%BB&lib=gbru"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Остала дела Самуела Бјерка у фонду библиотеке"
+                        style={{ marginTop: '0.5rem' }}
+                      >
+                        Остала дела овог аутора у нашем фонду
+                      </Button>
+                    </Col>
+                  </Row>
+                )}
+
+                {/* {activeKey === 'april' && (
+                  <Row>
+                    <Col xs={12} sm={12} md={4} lg={4} xl={4} className="text-center mt-4">
+                      <a
+                        href="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1351685249i/9458300.jpg"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Отвори слику корице — Дневник Марте Коен"
+                      >
+                        <img
+                          src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1351685249i/9458300.jpg"
+                          alt="Дневник Марте Коен — Светислав Басара, корица књиге"
+                          loading="lazy"
+                          width="300"
+                          height="450"
+                          className="container-image"
+                          referrerPolicy="no-referrer"
+                          style={{ maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }}
+                        />
+                      </a>
+                    </Col>
+                    <Col xs={12} sm={12} md={8} lg={8} xl={8} className="mt-4">
+                      <p className="container-text">
+                        <strong>Наша препорука за април — Одељење за одрасле</strong>
+                        <br /><br />
+                        <strong>Аутор:</strong> Светислав Басара<br />
+                        <strong>Наслов:</strong> „Дневник Марте Коен"
+                        <br /><br />
+                        Роман „Дневник Марте Коен" Светислав Басара доноси причу о Марти Коен, сложеној и контрадикторној личности која је истовремено приказана као сурова предводница логора за децу на Голом отоку и као дубоко трагична жена која није успела да пронађе испуњење у животу. Њен лик је обележен унутрашњим расцепом и подвојеношћу, што кулминира на самом крају, када се, иако чврсто везана за комунистичку идеологију, обраћа Богу и показује универзалну потребу за вишим смислом.
+                        <br /><br />
+                        Кроз истрагу новинара који покушава да расветли околности њене смрти, Басара гради сложену мрежу питања о идентитету, истини и одговорности. Њена смрт, која се показује као убиство, на крају добија извесну правду када се открива да је убица један од бивше деце из логора.
+                        <br /><br />
+                        Роман је испуњен апсурдом, филозофским и историјским слојевима, у којем се појављују разни ликови – од партијских функционера до мистичара – што додатно наглашава распад идеологија и преиспитивање „великих истина". Басара овим делом показује да човек, без обзира на идеолошка уверења, увек остаје у потрази за смислом и вишим бићем.
+                      </p>
+                      <Button
+                        variant="secondary"
+                        href="https://plus.cobiss.net/cobiss/sr/sr/search/cobib?lib=gbru&q=basara+svetislav"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Остала дела Светислава Басара у фонду библиотеке"
+                        style={{ marginTop: '0.5rem' }}
+                      >
+                        Остала дела овог аутора
+                      </Button>
+                    </Col>
+                  </Row>
+                )} */}
+
                 {activeKey === 'novembar' && (
                   <Row>
                     <Col xs={12} sm={12} md={4} lg={4} xl={4} className=" text-center mt-4">
@@ -786,6 +846,10 @@ const Recommendations =()=>{
                   
             </Row>
             <br/>
+      </div>
+
+    </div>
+  </AnimatedCard>
 
             {/* <h2 className='container-title mb-2 mt-4'>Жанровске препоруке</h2>
             <hr />
