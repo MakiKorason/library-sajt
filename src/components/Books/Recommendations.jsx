@@ -550,16 +550,7 @@ const Recommendations =()=>{
                         Софистицирана радња, снажна психологија ликова и атмосфера која држи пажњу до последње странице чине овај роман правим примером врхунског скандинавског ноара.
                         Књига која се не испушта из руку.
                       </p>
-                      <Button
-                        variant="secondary"
-                        href="https://plus.cobiss.net/cobiss/sr/sr/search/cobib/results?q=%D0%B1%D1%98%D0%B5%D1%80%D0%BA%2C%20%D1%81%D0%B0%D0%BC%D1%83%D0%B5%D0%BB&lib=gbru"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Остала дела Самуела Бјерка у фонду библиотеке"
-                        style={{ marginTop: '0.5rem' }}
-                      >
-                        Остала дела овог аутора у нашем фонду
-                      </Button>
+                    
                     </Col>
                   </Row>
                 )}
