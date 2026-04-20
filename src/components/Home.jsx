@@ -15,7 +15,7 @@ import kc from '../images/kc.webp';
 import turisticka from '../images/turisticka.webp';
 import miljkovic from '../images/miljkovic.webp'
 import logoDigitalna from '../images/logoDigitalna.webp'
-import izlozba from '../images/izlozba.webp'
+import mojVuneni from '../images/mojVuneni.jpg'
 import '@react-pdf-viewer/core/lib/styles/index.css';
 import beke from '../images/beke.webp';
 import Frigo from '../images/Frigo.webp';
@@ -68,7 +68,7 @@ const Home =()=> {
     // Означени датуми: 27. фебруар + 24. и 26. март 2026.
     if (
       
-      isSameDay(date, EVENTS_YEAR, 2, 25)
+      isSameDay(date, EVENTS_YEAR, 3, 22)
        || // фебруар (month: 1)
       isSameDay(date, EVENTS_YEAR, 3, 2 ) || // март (month: 2)
       isSameDay(date, EVENTS_YEAR, 2, 26) 
@@ -102,8 +102,8 @@ const Home =()=> {
       setShowImage(true);
       return;
     }
-    if (date.getMonth() === 2 && date.getDate() === 25) {
-      setModalImage(izlozba);
+    if (date.getMonth() === 3 && date.getDate() === 22) {
+      setModalImage(mojVuneni);
       setShowImage(true);
       return;
     }
@@ -120,8 +120,8 @@ const Home =()=> {
   const imageSets = useMemo(() => [
     // Одељење огласне табле: Хуго (11. фебруар) ближе календару, Вaсилије (6. фебруар) десно
     // Render koristi samo [0] i [1], zato pravimo setove po 2 slike.
-    [azbukvar,bombardovanje],
-    [miljkovic, izlozba],
+    [mojVuneni,azbukvar],
+    [bombardovanje, miljkovic],
   ], []);
   
   const toggleImageSet = () => {
