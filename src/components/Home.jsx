@@ -16,6 +16,7 @@ import turisticka from '../images/turisticka.webp';
 import miljkovic from '../images/miljkovic.webp'
 import logoDigitalna from '../images/logoDigitalna.webp'
 import mojVuneni from '../images/mojVuneni.jpg'
+import saradnja from '../images/saradnja.jpg'
 import '@react-pdf-viewer/core/lib/styles/index.css';
 import beke from '../images/beke.webp';
 import Frigo from '../images/Frigo.webp';
@@ -33,7 +34,7 @@ import 'react-calendar/dist/Calendar.css';
 import AnimatedCard from './Department/AnimatedCard'; 
 import pokrajina from '../images/pokrajina.webp';
 import { Helmet } from "react-helmet-async";
-
+import audioKnjiga from '../images/audioKnjiga.png'
 // Bootstrap JS is imported in index.js
 
 
@@ -471,7 +472,66 @@ const Home =()=> {
 
 {/* Kolаж сарадње са Матицом српском */}
 
+<Container className=" container-library ms-auto mt-4 mb-4">
+      
+      {/* Наслов */}
+      <Row>
+        <Col>
+          <h2 className="container-title">
+          Нова услуга: аудио-књиге
+          </h2>
+        </Col>
+      </Row>
 
+      <br/><hr/>
+      <Row className="align-items-center">
+        
+        {/* Лево – слика */}
+        <Col md={6}>
+          <AnimatedImage
+          src={audioKnjiga}
+            alt="Аудио књиге"
+           
+          />
+              <AnimatedImage
+          src={saradnja}
+            alt="Аудио књиге"
+           
+          />
+        </Col>
+
+        {/* Десно – текст */}
+        <Col md={6}>
+        <p className='container-text'>
+  Почев од 23. априла, у Градској библиотеци „Атанасије Стојковић“ у Руми доступан је пилот пројекат „Књига прича“, који доноси могућност слушања аудио-књига.
+
+  Током шест месеци трајања пројекта, корисницима је омогућен једноставан приступ садржају – довољно је скенирати QR код у библиотеци или приступити платформи директно путем овог:{" "}
+  
+  <a 
+    href="https://izdavanje.knjigaprica.com/r/ABlQaR6Ev0Tsgs0ZVByXLV1IMqA3"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    линка
+  </a>
+
+  <br/>Након истека шестомесечног пробног периода, корисницима Градске библиотеке са плаћеном чланарином биће омогућено да наставе са коришћењем платформе.
+  <br /><hr />
+
+  Ова услуга намењена је свима који желе другачији начин уживања у књигама, посебно особама са оштећењем вида, али и онима који, због свакодневних обавеза, немају времена за читање.
+
+  Понуда обухвата разноврсне жанрове, укључујући књижевност, популарну психологију, историју и школску лектиру.
+
+  
+</p>
+          <p className='container-text'>
+          Пројекат се реализује у сарадњи Градске библиотеке и платформе „Књига прича“, под руководством директора библиотеке Дамира Васиљевића Тоскића и Ненада Иђошког, директора и суоснивача платформе „Књига прича“.
+          </p>
+        </Col>
+       <Col md={12} className='container-title'>Упуство за регистровање<hr/></Col>
+
+      </Row>
+    </Container>
 
 <Container  className=" container-library ms-auto mt-4 mb-4 ">
  
