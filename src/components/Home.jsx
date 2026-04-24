@@ -480,6 +480,7 @@ const Home =()=> {
           <h2 className="container-title">
           Нова услуга: аудио-књиге
           </h2>
+          <a className="container-text text-centar" href="https://izdavanje.knjigaprica.com/r/ABlQaR6Ev0Tsgs0ZVByXLV1IMqA3">Линк за регистрацију и слање захтева за аудио књигу</a>
         </Col>
       </Row>
 
