@@ -22,7 +22,7 @@ import Legati from './components/Department/Legati';
 import MisionAndVision from './components/AboutAs/MisionAndVision';
 import { FaEnvelope } from 'react-icons/fa';
 import { HelmetProvider } from "react-helmet-async";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AnimatedPage from './components/Department/AnimatedPage';
 import ImageModal from './components/ImageModal';
 import { AnimatePresence } from 'framer-motion';
@@ -30,9 +30,14 @@ import NotFound from './components/NotFound';
 // import cobbis from './images/cobbis.webp';
 // import logoDigitalna from './images/logoDigitalna.webp'
 
+const GOOGLE_TRANSLATE_SCRIPT_ID = 'google-translate-script';
+const LANGUAGE_STORAGE_KEY = 'siteLanguage';
+const GOOGLE_TRANSLATE_COOKIE_NAME = 'googtrans';
+
 function InnerApp() {
   const location = useLocation();
   const [expanded, setExpanded] = useState(false);
+  const [language] = useState(localStorage.getItem(LANGUAGE_STORAGE_KEY) || 'sr');
   
   // State for image modal
   const [showImageModal, setShowImageModal] = useState(false);
@@ -45,6 +50,85 @@ function InnerApp() {
     setSelectedImage({ src: '', alt: '', title: '' });
   };
 
+  const setTranslateCookie = (targetLanguage) => {
+    const cookieValue = `/sr/${targetLanguage}`;
+    document.cookie = `${GOOGLE_TRANSLATE_COOKIE_NAME}=${cookieValue};path=/;max-age=31536000`;
+    if (window.location.hostname && window.location.hostname !== 'localhost') {
+      document.cookie = `${GOOGLE_TRANSLATE_COOKIE_NAME}=${cookieValue};path=/;domain=.${window.location.hostname};max-age=31536000`;
+    }
+  };
+
+  const handleLanguageClick = (targetLanguage) => {
+    if (targetLanguage === language) {
+      return;
+    }
+    localStorage.setItem(LANGUAGE_STORAGE_KEY, targetLanguage);
+    setTranslateCookie(targetLanguage);
+    window.location.reload();
+  };
+
+  useEffect(() => {
+    const initializeTranslator = () => {
+      if (window.google?.translate?.TranslateElement) {
+        new window.google.translate.TranslateElement(
+          {
+            pageLanguage: 'sr',
+            includedLanguages: 'sr,en',
+            autoDisplay: false
+          },
+          'google_translate_element'
+        );
+      }
+    };
+
+    window.googleTranslateElementInit = initializeTranslator;
+
+    if (!document.getElementById(GOOGLE_TRANSLATE_SCRIPT_ID)) {
+      const script = document.createElement('script');
+      script.id = GOOGLE_TRANSLATE_SCRIPT_ID;
+      script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+      script.async = true;
+      document.body.appendChild(script);
+    } else {
+      initializeTranslator();
+    }
+
+    return () => {
+      window.googleTranslateElementInit = undefined;
+    };
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem(LANGUAGE_STORAGE_KEY, language);
+    setTranslateCookie(language);
+
+    const applyLanguage = () => {
+      const select = document.querySelector('.goog-te-combo');
+      if (!select) {
+        return false;
+      }
+
+      if (select.value !== language) {
+        select.value = language;
+        select.dispatchEvent(new Event('change'));
+        select.dispatchEvent(new Event('input'));
+      }
+      return true;
+    };
+
+    if (applyLanguage()) {
+      return undefined;
+    }
+
+    const interval = setInterval(() => {
+      if (applyLanguage()) {
+        clearInterval(interval);
+      }
+    }, 350);
+
+    return () => clearInterval(interval);
+  }, [language]);
+
   return (
     <>
 
@@ -56,6 +140,7 @@ function InnerApp() {
           <a href="https://www.instagram.com/gradska_biblioteka_ruma" target="_blank" rel="noopener noreferrer" aria-label="Instagram biblioteke" style={{ marginRight: '10px', fontSize: '1em', color: 'inherit' }}><i className="fab fa-instagram"></i> Instagram</a> |
           <a href="https://www.facebook.com/bibliotekaatanasijestojkovic.ruma" target="_blank" rel="noopener noreferrer" aria-label="Facebook biblioteke" style={{ fontSize: '1em', color: 'inherit' }}><i className="fab fa-facebook"></i> Facebook</a></span>  
         </div>
+        <div id="google_translate_element" />
       </div> 
            
     
@@ -84,7 +169,6 @@ function InnerApp() {
                 </Col>
               </Row>
             </Navbar.Brand>
-
             {/* Hamburger meni ili X dugme */}
             {!expanded && (
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -110,11 +194,7 @@ function InnerApp() {
             
             <Navbar.Collapse id="basic-navbar-nav">
               <div className="w-100 d-flex flex-column align-items-lg-end">
-                {/* Ikonice COBISS i Digitalna iznad menija, desno */}
- 
-
                 <Nav className="ms-auto fs-5 mt-3 align-items-lg-center">
-
                   <NavDropdown title="О БИБЛИОТЕЦИ" id="about-dropdown">
                     <NavDropdown.Item as={Link} to="/istorijat-biblioteke" onClick={() => setExpanded(false)}>Историјат библиотеке</NavDropdown.Item>
                     <NavDropdown.Item as={Link} to="/zaposleni-biblioteke" onClick={() => setExpanded(false)}>Запослени</NavDropdown.Item>
@@ -148,6 +228,47 @@ function InnerApp() {
           </Container>
         </Navbar>
       </header>
+      <div className="utility-floating notranslate" translate="no">
+        <div className="language-floating" translate="no">
+          <button
+            type="button"
+            className={language === 'sr' ? 'active' : ''}
+            onClick={() => handleLanguageClick('sr')}
+            translate="no"
+            aria-label="Prikazi sajt na srpskom"
+          >
+            SR
+          </button>
+          <span translate="no">/</span>
+          <button
+            type="button"
+            className={language === 'en' ? 'active' : ''}
+            onClick={() => handleLanguageClick('en')}
+            translate="no"
+            aria-label="Show website in English"
+          >
+            EN
+          </button>
+        </div>
+        <a
+          className="utility-link"
+          href="https://plus.cobiss.net/cobiss/sr/sr/search/cobib?lib=gbru"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="COBISS pretraga fonda"
+        >
+          COBISS
+        </a>
+        <a
+          className="utility-link"
+          href="https://www.digitalna.bibliotekaruma.rs/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Digitalna biblioteka"
+        >
+          DIGITALNA
+        </a>
+      </div>
 
       <main role="main" id="main-content">
       <AnimatePresence mode="wait">

@@ -649,14 +649,14 @@ const Home =()=> {
 
   
         <Container className='mt-4 '>
-         <Row className='text-center'>
-         <Col md={4} className='mt-4'>     
+         <Row className='text-center feature-icons-row'>
+         <Col md={4} className='mt-4 feature-icon-col'>     
          <AnimatedCard>
         <a href="https://plus.cobiss.net/cobiss/sr/sr/search/cobib?lib=gbru" target="_blank" rel="noopener noreferrer">
-        <p className='container-title'>Претражите<br/> наш фонд  </p> </a><img 
+        <p className='container-title feature-icon-title'>Претражите<br/> наш фонд  </p> </a><img 
       src={cobbis}
       alt="COBISS" 
-      className='container-image'
+      className='container-image feature-icon-image'
       style={{border:'none', width: "75%"}}
       width="200"
       height="200"
@@ -664,31 +664,32 @@ const Home =()=> {
       />
   </AnimatedCard> 
      </Col>
-           <Col md={4} className='mt-4'>
+           <Col md={4} className='mt-4 feature-icon-col'>
                <AnimatedCard>
-                <a href="https://www.digitalna.bibliotekaruma.rs/" target='_blank' rel="noopener noreferrer">  <p className='container-title'>  
+                <a href="https://www.digitalna.bibliotekaruma.rs/" target='_blank' rel="noopener noreferrer">  <p className='container-title feature-icon-title'>  
                Наш дигитални<br/> фонд </p></a>
-                <img 
+     <img 
       src={logoDigitalna}
        alt="Грб Градске библиотеке Рума" 
-       className='container-image digital-logo'
-       width="300"
-       height="200"
+       className='container-image digital-logo feature-icon-image'
+       style={{ width: '88%', maxWidth: '360px', height: 'auto' }}
+       width="360"
+       height="220"
        loading="lazy"
        itemProp="image"
        /> </AnimatedCard>
        </Col> 
-                   <Col  md={4}  className='mt-0'>
+                  <Col  md={4}  className='mt-0 feature-icon-col'>
                   <AnimatedCard>
              <a href="https://www.facebook.com/photo/?fbid=1326535312805422&set=a.512519967540298" target="_blank" rel="noopener noreferrer" className="konkurs-link">
-               <p className="container-title mb-0">
+              <p className="container-title mb-0 feature-icon-title">
                  Књижевни <br/>конкурс
                </p>
              </a>
              <img 
        src={konkurs}
        alt="Конкурс" 
-       className='container-image konkurs-logo'
+      className='container-image konkurs-logo feature-icon-image'
        style={{border:'none', width:'45%'}}
                width="250"
                height="200"
@@ -703,14 +704,14 @@ const Home =()=> {
        </Col></Row>
        </Container>
 
-<Container className="container-library ms-auto mt-4 mb-4">
+<Container className="container-library ms-auto mt-0 mb-4 matica-section">
  
   <Row className="justify-content-center">
-    <Col md={3} className="mb-3">
+    <Col md={3} className="mb-3 matica-images-left">
       <img 
         src={saradnja1} 
         alt="Сарадња са Матицом српском 1" 
-        className="img-fluid"
+        className="img-fluid matica-image"
         style={{ 
           width: '100%', 
           height: 'auto', 
@@ -720,11 +721,11 @@ const Home =()=> {
         loading="lazy"
       />
     </Col>
-    <Col md={3} className="mb-3">
+    <Col md={3} className="mb-3 matica-images-right">
       <img 
         src={saradnja3} 
         alt="Сарадња са Матицом српском 2" 
-        className="img-fluid"
+        className="img-fluid matica-image"
         style={{ 
           width: '100%', 
           height: 'auto', 
@@ -737,7 +738,7 @@ const Home =()=> {
       <img 
         src={saradnja2} 
         alt="Сарадња са Матицом српском 3" 
-        className="img-fluid"
+        className="img-fluid matica-image matica-image-stack"
         style={{ 
           width: '100%', 
           height: 'auto', 
@@ -747,9 +748,9 @@ const Home =()=> {
         loading="lazy"
       />
     </Col> 
-    <Col md={6}>
+    <Col md={6} className="matica-text-col">
       <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-        <p style={{ 
+        <p className="matica-text" style={{ 
           fontSize: '1.2rem', 
           lineHeight: '1.8', 
           color: '#3f2c11',

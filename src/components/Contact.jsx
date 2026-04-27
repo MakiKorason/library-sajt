@@ -73,25 +73,25 @@ const Contact = () => {
               <h2 className="container-title text-center mb-3">Телефони</h2>
               <Row>
                 <Col xs={12} className="container-text text-center mb-3">
-                  <FaPhone className="container-icon" />
+                  <FaPhone className="container-icon" style={{ fontSize: '2.2rem' }} />
                   <hr />
                   <h6>Дечије одељење</h6>
              <p>022/495-047</p>
               </Col>
                 <Col xs={12} className="container-text text-center mb-3">
-                  <FaPhone className="container-icon" />
+                  <FaPhone className="container-icon" style={{ fontSize: '2.2rem' }} />
                   <hr />
                   <h6>Научно одељење</h6>
                   <p>022/490-047</p>
                 </Col>
                 <Col xs={12} className="container-text text-center mb-3">
-                  <FaPhone className="container-icon" />
+                  <FaPhone className="container-icon" style={{ fontSize: '2.2rem' }} />
                   <hr />
                   <h6>Одрасло одељење</h6>
              <p>022/478-920</p>
            </Col>
                 <Col xs={12} className="container-text text-center">
-                  <FaPhone className="container-icon" />
+                  <FaPhone className="container-icon" style={{ fontSize: '2.2rem' }} />
                   <hr />
                   <h6>Администрација</h6>
              <p>022/215-65-63</p>

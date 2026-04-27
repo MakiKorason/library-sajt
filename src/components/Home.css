@@ -565,6 +565,19 @@ color: #1a1a1a;
   padding-left: 0.3rem;
 }
 
+.feature-icon-title {
+  min-height: 86px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-bottom: 0.8rem;
+}
+
+.feature-icon-image {
+  display: block;
+  margin: 0 auto;
+}
+
 @media (max-width: 768px) {
   .react-calendar {
     padding: 6px;
@@ -576,6 +589,41 @@ color: #1a1a1a;
   /* Responsive stilovi za kolаж сарадње */
   .container-library .row .col-md-4 {
     margin-bottom: 1rem;
+  }
+
+  .feature-icon-title {
+    min-height: auto;
+    margin-bottom: 0.5rem;
+  }
+
+  .feature-icons-row {
+    row-gap: 0.2rem;
+  }
+
+  .feature-icon-col.mt-4 {
+    margin-top: 0.45rem !important;
+  }
+
+  .matica-section .matica-text {
+    margin-top: 1.2rem !important;
+  }
+
+  .matica-section .matica-text-col {
+    order: 1;
+  }
+
+  .matica-section .matica-images-left,
+  .matica-section .matica-images-right {
+    order: 2;
+    margin-top: -0.35rem;
+  }
+
+  .matica-section .matica-image {
+    margin-bottom: 0.65rem;
+  }
+
+  .matica-section .matica-image-stack {
+    margin-top: 0.1rem;
   }
 }
 
