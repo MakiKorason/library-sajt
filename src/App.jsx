@@ -34,10 +34,18 @@ const GOOGLE_TRANSLATE_SCRIPT_ID = 'google-translate-script';
 const LANGUAGE_STORAGE_KEY = 'siteLanguage';
 const GOOGLE_TRANSLATE_COOKIE_NAME = 'googtrans';
 
+function getInitialLanguage() {
+  try {
+    return localStorage.getItem(LANGUAGE_STORAGE_KEY) || 'sr';
+  } catch {
+    return 'sr';
+  }
+}
+
 function InnerApp() {
   const location = useLocation();
   const [expanded, setExpanded] = useState(false);
-  const [language] = useState(localStorage.getItem(LANGUAGE_STORAGE_KEY) || 'sr');
+  const [language] = useState(getInitialLanguage());
   
   // State for image modal
   const [showImageModal, setShowImageModal] = useState(false);
@@ -52,9 +60,13 @@ function InnerApp() {
 
   const setTranslateCookie = (targetLanguage) => {
     const cookieValue = `/sr/${targetLanguage}`;
-    document.cookie = `${GOOGLE_TRANSLATE_COOKIE_NAME}=${cookieValue};path=/;max-age=31536000`;
-    if (window.location.hostname && window.location.hostname !== 'localhost') {
-      document.cookie = `${GOOGLE_TRANSLATE_COOKIE_NAME}=${cookieValue};path=/;domain=.${window.location.hostname};max-age=31536000`;
+    try {
+      document.cookie = `${GOOGLE_TRANSLATE_COOKIE_NAME}=${cookieValue};path=/;max-age=31536000`;
+      if (window.location.hostname && window.location.hostname !== 'localhost') {
+        document.cookie = `${GOOGLE_TRANSLATE_COOKIE_NAME}=${cookieValue};path=/;domain=.${window.location.hostname};max-age=31536000`;
+      }
+    } catch {
+      // ignore cookie failures (privacy settings, blocked cookies, etc.)
     }
   };
 
@@ -62,7 +74,11 @@ function InnerApp() {
     if (targetLanguage === language) {
       return;
     }
-    localStorage.setItem(LANGUAGE_STORAGE_KEY, targetLanguage);
+    try {
+      localStorage.setItem(LANGUAGE_STORAGE_KEY, targetLanguage);
+    } catch {
+      // ignore storage failures (privacy settings, blocked storage, etc.)
+    }
     setTranslateCookie(targetLanguage);
     window.location.reload();
   };
@@ -99,7 +115,11 @@ function InnerApp() {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem(LANGUAGE_STORAGE_KEY, language);
+    try {
+      localStorage.setItem(LANGUAGE_STORAGE_KEY, language);
+    } catch {
+      // ignore
+    }
     setTranslateCookie(language);
 
     const applyLanguage = () => {
