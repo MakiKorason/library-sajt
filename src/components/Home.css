@@ -19,6 +19,19 @@ font-size: 1.5rem;
   font-size: 1.35em;
   letter-spacing: 0.5px;
 }
+
+.slide-notice-box {
+  width: 50%;
+  margin: 0 auto;
+  padding: 1.4rem 1.8rem;
+  background-color: #fff;
+  border: 3px solid #000;
+  color: #111;
+  text-shadow: none;
+  font-size: 2.2rem;
+  line-height: 1.45;
+  text-align: center;
+}
 .image-carousel {
  max-width: 100%; 
 max-height: auto;
@@ -48,6 +61,12 @@ max-height: auto;
   .carousel-caption p {
     font-size: 14px;
     padding: 5px;
+  }
+
+  .slide-notice-box {
+    width: 90%;
+    font-size: 1.15rem;
+    padding: 0.9rem;
   }
   
   /* Optimizacija za karusel u oglasnoj tabli na telefonima */

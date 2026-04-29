@@ -313,7 +313,7 @@ const Home =()=> {
             height="675"
           />
           <div className="carousel-caption">
-            <p className="carousel-caption-text">
+            {/* <p className="carousel-caption-text">
               Зграда Градске библиотеке „Атанасије Стојковић" представља пример
               јединственог архитектонског стваралаштва.
               <br />
@@ -326,6 +326,10 @@ const Home =()=> {
               >
                 ДЕТАЉНИЈЕ
               </Button>
+            </p> */}
+            <p className="carousel-caption-text slide-notice-box">
+              Поштовани корисници, обавештавамо вас да библиотека неће радити у петак.
+              Први радни дан је понедељак 4.5.2026.
             </p>
           </div>
         </div>
