@@ -5,9 +5,25 @@ import { Helmet } from 'react-helmet-async';
 import './Recommendations.css';
 import AnimatedCard from '../Department/AnimatedCard'; 
 
+const RECOMMENDATION_ARCHIVE_MONTHS = [
+  ['jun', 'Јун'],
+  ['jul', 'Јул'],
+  ['avgust', 'Август'],
+  ['septembar', 'Септембар'],
+  ['oktobar', 'Октобар'],
+  ['novembar', 'Новембар'],
+  ['decembar', 'Децембар'],
+  ['januar', 'Јануар'],
+  ['februar', 'Фебруар'],
+  ['mart', 'Март'],
+  ['april', 'Април'],
+];
+
 const Recommendations =()=>{
 
-  const [activeKey, setActiveKey] = useState('mart');
+  const [activeKey, setActiveKey] = useState('april');
+  const [activeKeyDeca, setActiveKeyDeca] = useState('april');
+  const [activeKeyNaucno, setActiveKeyNaucno] = useState('april');
 
     // const knjigeZaOdrasle = [
     //   {
@@ -228,12 +244,12 @@ const Recommendations =()=>{
       {/* Дечије одељење */}
       <div id="menu1" className="container tab-pane fade">
         <br/>
+        <h3 className="container-title" style={{ fontSize: 'clamp(1.4rem, 4vw, 2.2rem)' }}>Месечна препорука — Дечије одељење</h3>
         <Row>
           <Col xs={12} md={4} lg={4} className="text-center mt-2 mt-md-0">
-           
               <img
-                src="https://jrjmojizdavac.com/wp-content/uploads/2024/10/putokazi-srpskih-velikana-1200x1200-1-600x600.jpg"
-                alt="Путокази српских великана"
+                src="https://www.malasrpskaprodavnica.com/user/include/etno/images/items/knjiga_knjiga_slucajnosti.jpg"
+                alt="Књига случајности — Оса Линд"
                 loading="lazy"
                 width="300"
                 height="450"
@@ -247,18 +263,72 @@ const Recommendations =()=>{
                   marginTop: '2rem'
                 }}
               />
-       
           </Col>
 
           <Col xs={12} md={8} lg={8}>
             <p className='container-text'>
-              <strong>Наша препорука — Дечије одељење</strong><br/><br/>
-              <strong>Аутор:</strong> Ђурђа Покрајац<br/>
-              <strong>Наслов:</strong> „Путокази српских великана"<br/><br/>
-              Ова лепа и корисна књига води нас кроз животе 13 величанствених личности које су оставиле неизбрисив траг градећи темеље наше науке и културе.
-              Књига је обогаћена илустрацијама, фотографијама и QR кодовима који откривају нове детаље и приче.
-              Ауторка подстиче младе читаоце да самостално наставе с праћењем путоказа тако што ће посетити најближе музеје, спомен-куће, галерије и библиотеке. Тако читање постаје прави истраживачки подухват, а важна порука на том путу јесте да се успех ствара трудом и вером у себе, о чему сведоче животи и дела наших великана.
+              <strong>Наша препорука</strong><br/>
+              <strong>Дечје одељење</strong><br/><br/>
+              <strong>Аутор:</strong> Оса Линд<br/>
+              <strong>Наслов:</strong> „Књига случајности"<br/><br/>
+              Када дванаестогодишња Хана Деметер пронађе „Књигу случајности“, једна прочитана реченица заувек мења њен свет. Та мистериозна књига писана је само за њу, али Хана тек треба да открије ко ју је написао и због чега. Оно што је до тада деловало као врло компликован живот претвара се у низ узбудљивих авантура, испуњених новим пријатељствима, али и тајнама и опасностима.
+              <br/><br/>
+              Овај роман намењен је деци узраста од 11 до 15 година, али ће лако освојити и старије читаоце својом маштовитом причом и неизвесношћу.
             </p>
+            <Button
+                        variant="secondary"
+                        href="https://plus.cobiss.net/cobiss/sr/sr/search/cobib?lib=gbru&q=%D0%9E%D1%81%D0%B0+%D0%9B%D0%B8%D0%BD%D0%B4"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Остала дела Славенке Дракулић коју поседује наша библиотека"
+                        style={{marginTop: '0.5rem'}}
+                      >
+                        Остала дела овог аутора којe поседује наша библиотека
+                      </Button>
+          </Col>
+        </Row>
+
+        <Row><br /><hr />
+          <Col md={3}>
+            <Nav variant="pills" className="flex-column" activeKey={activeKeyDeca} onSelect={(k) => k && setActiveKeyDeca(k)}>
+              {RECOMMENDATION_ARCHIVE_MONTHS.map(([key, label]) => (
+                <Nav.Item key={key}>
+                  <Nav.Link eventKey={key} className="container-text">{label}</Nav.Link>
+                </Nav.Item>
+              ))}
+            </Nav>
+          </Col>
+          <Col md={9}>
+            {activeKeyDeca === 'april' && (
+              <Row>
+                <Col xs={12} sm={12} md={4} lg={4} className="text-center mt-4">
+                  <img
+                    src="https://jrjmojizdavac.com/wp-content/uploads/2024/10/putokazi-srpskih-velikana-1200x1200-1-600x600.jpg"
+                    alt="Путокази српских великана — Ђурђа Покрајац"
+                    loading="lazy"
+                    width="300"
+                    height="450"
+                    itemProp="image"
+                    referrerPolicy="no-referrer"
+                    className="container-image"
+                    style={{ maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }}
+                  />
+                </Col>
+                <Col xs={12} sm={12} md={8} lg={8} className="mt-4">
+                  <p className="container-text">
+                    <strong>Наша препорука за април — Дечије одељење</strong><br/><br/>
+                    <strong>Аутор:</strong> Ђурђа Покрајац<br/>
+                    <strong>Наслов:</strong> „Путокази српских великана"<br/><br/>
+                    Ова лепа и корисна књига води нас кроз животе 13 величанствених личности које су оставиле неизбрисив траг градећи темеље наше науке и културе.
+                    Књига је обогаћена илустрацијама, фотографијама и QR кодовима који откривају нове детаље и приче.
+                    Ауторка подстиче младе читаоце да самостално наставе с праћењем путоказа тако што ће посетити најближе музеје, спомен-куће, галерије и библиотеке. Тако читање постаје прави истраживачки подухват, а важна порука на том путу јесте да се успех ствара трудом и вером у себе, о чему сведоче животи и дела наших великана.
+                  </p>
+                </Col>
+              </Row>
+            )}
+            {activeKeyDeca !== 'april' && (
+              <p className="container-text mt-4">За изабрани месец архива тренутно нема унос.</p>
+            )}
           </Col>
         </Row>
       </div>
@@ -266,12 +336,12 @@ const Recommendations =()=>{
       {/* Научно одељење */}
       <div id="menu2" className="container tab-pane fade">
         <br/>
+        <h3 className="container-title" style={{ fontSize: 'clamp(1.4rem, 4vw, 2.2rem)' }}>Месечна препорука — Научно одељење</h3>
         <Row>
           <Col xs={12} md={4} lg={4} className="text-center mt-2 mt-md-0">
-          
               <img
-                src="https://delfi.rs/_img/artikli/2022/04/deca_koja_zele_da_izlece_svoje_roditelje_vv.jpg"
-                alt="Деца која желе да излече своје родитеље - корица књиге"
+                src="https://static.kupindoslike.com/Bluz-tvoje-duse-Anders-Hansen_slika_O_166544681.jpg"
+                alt="Блуз твоје душе — Андерс Хансен"
                 loading="lazy"
                 width="300"
                 height="450"
@@ -285,19 +355,63 @@ const Recommendations =()=>{
                   marginTop: '2rem'
                 }}
               />
-            
           </Col>
 
           <Col xs={12} md={8} lg={8}>
             <br/>
             <p className='container-text'>
-              <strong>Наша препорука - Научно одељење</strong><br/><br/>
-              <strong>Аутор:</strong> Бруно Клавије<br/>
-              <strong>Наслов:</strong> „Деца која желе да излече своје родитеље"<br/><br/>
-              Бруно Клавије, француски психоаналитичар, у овој књизи на једноставан и разумљив начин приказује колико су деца дубоко повезана са родитељима и како та веза утиче на њихове емоције, понашање и унутрашњи свет.
-              Кроз бројне примере из клиничке праксе, аутор показује како деца често несвесно преузимају улогу спасилаца својих родитеља, настојећи да очувају равнотежу у породици. "Наша деца оболевају покушавајући да нас излече, а пре свега да излече наша породична стабла", истиче Клавије.
-              Књига је намењена свима који желе свесније да сагледају дечји свет, али и значај наслеђа наших предака.
+              <strong>Наша препорука</strong><br/>
+              <strong>Научно одељење</strong><br/><br/>
+              <strong>Аутор:</strong> Андерс Хансен<br/>
+              <strong>Наслов:</strong> „Блуз твоје душе"<br/><br/>
+              „Блуз твоје душе" је научнопопуларна књига која на занимљив начин разматра једну велику савремену загонетку — зашто многи људи имају проблема с менталним здрављем, упркос све бољим условима живота. Полазећи од чињенице да смо потомци оних који су преживљавали у много тежим околностима, аутор објашњава како наш мозак и даље функционише по старим обрасцима. Књига нуди биолошки увид у наше ментално и физичко стање, с циљем да боље разумемо сопствене реакције и осећања.
+              <br/><br/>
+              Интересантно и корисно штиво за све који су спремни да мењају поглед на себе и свет.
             </p>
+          </Col>
+        </Row>
+
+        <Row><br /><hr />
+          <Col md={3}>
+            <Nav variant="pills" className="flex-column" activeKey={activeKeyNaucno} onSelect={(k) => k && setActiveKeyNaucno(k)}>
+              {RECOMMENDATION_ARCHIVE_MONTHS.map(([key, label]) => (
+                <Nav.Item key={`n-${key}`}>
+                  <Nav.Link eventKey={key} className="container-text">{label}</Nav.Link>
+                </Nav.Item>
+              ))}
+            </Nav>
+          </Col>
+          <Col md={9}>
+            {activeKeyNaucno === 'april' && (
+              <Row>
+                <Col xs={12} sm={12} md={4} lg={4} className="text-center mt-4">
+                  <img
+                    src="https://delfi.rs/_img/artikli/2022/04/deca_koja_zele_da_izlece_svoje_roditelje_vv.jpg"
+                    alt="Деца која желе да излече своје родитеље — Бруно Клавије"
+                    loading="lazy"
+                    width="300"
+                    height="450"
+                    itemProp="image"
+                    referrerPolicy="no-referrer"
+                    className="container-image"
+                    style={{ maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }}
+                  />
+                </Col>
+                <Col xs={12} sm={12} md={8} lg={8} className="mt-4">
+                  <p className="container-text">
+                    <strong>Наша препорука за април — Научно одељење</strong><br/><br/>
+                    <strong>Аутор:</strong> Бруно Клавије<br/>
+                    <strong>Наслов:</strong> „Деца која желе да излече своје родитеље"<br/><br/>
+                    Бруно Клавије, француски психоаналитичар, у овој књизи на једноставан и разумљив начин приказује колико су деца дубоко повезана са родитељима и како та веза утиче на њихове емоције, понашање и унутрашњи свет.
+                    Кроз бројне примере из клиничке праксе, аутор показује како деца често несвесно преузимају улогу спасилаца својих родитеља, настојећи да очувају равнотежу у породици. „Наша деца оболевају покушавајући да нас излече, а пре свега да излече наша породична стабла“, истиче Клавије.
+                    Књига је намењена свима који желе свесније да сагледају дечји свет, али и значај наслеђа наших предака.
+                  </p>
+                </Col>
+              </Row>
+            )}
+            {activeKeyNaucno !== 'april' && (
+              <p className="container-text mt-4">За изабрани месец архива тренутно нема унос.</p>
+            )}
           </Col>
         </Row>
       </div>
@@ -307,23 +421,24 @@ const Recommendations =()=>{
         <br/>
         <h3 className="container-title" style={{ fontSize: 'clamp(1.4rem, 4vw, 2.2rem)' }}>Месечна препорука романа</h3>
         <Row>
-          <Col xs={12} md={4} lg={4} className="text-center mt-2 mt-md-0">
+          <Col xs={12} md={5} lg={5} className="text-center mt-2 mt-md-0">
             <a
-              href="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1351685249i/9458300.jpg"
+              href="https://static.rtv.rs/slike/2025/09/22/nadja-petrovic-meduze-zive-zauvek-geopoetika.jpg"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Отвори слику корице — Дневник Марте Коен"
+              aria-label="Отвори слику корице — Медузе живе заувек док их не ухвате, Нађа Петровић"
             >
               <img
-                src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1351685249i/9458300.jpg"
-                alt="Дневник Марте Коен — Светислав Басара, корица књиге"
+                src="https://static.rtv.rs/slike/2025/09/22/nadja-petrovic-meduze-zive-zauvek-geopoetika.jpg"
+                alt="Корица књиге „Медузе живе заувек док их не ухвате" 
                 loading="lazy"
-                width="300"
-                height="450"
+                width="380"
+                height="570"
                 itemProp="image"
                 referrerPolicy="no-referrer"
                 style={{
-                  maxWidth: '100%',
+                  width: '100%',
+                  maxWidth: 'min(100%, 420px)',
                   height: 'auto',
                   display: 'block',
                   margin: '0 auto',
@@ -331,68 +446,41 @@ const Recommendations =()=>{
                 }}
               />
             </a>
-          </Col>
-          <Col xs={12} md={8} lg={8}>
-            <p className='container-text'>
-              <strong>Наша препорука за април — Одељење за одрасле</strong><br/><br/>
-              <strong>Аутор:</strong> Светислав Басара<br/>
-              <strong>Наслов:</strong> „Дневник Марте Коен"<br/><br/>
-              Роман „Дневник Марте Коен" Светислав Басара доноси причу о Марти Коен, сложеној и контрадикторној личности која је истовремено приказана као сурова предводница логора за децу на Голом отоку и као дубоко трагична жена која није успела да пронађе испуњење у животу. Њен лик је обележен унутрашњим расцепом и подвојеношћу, што кулминира на самом крају, када се, иако чврсто везана за комунистичку идеологију, обраћа Богу и показује универзалну потребу за вишим смислом.
-              <br/><br/>
-              Кроз истрагу новинара који покушава да расветли околности њене смрти, Басара гради сложену мрежу питања о идентитету, истини и одговорности. Њена смрт, која се показује као убиство, на крају добија извесну правду када се открива да је убица један од бивше деце из логора.
-              <br/><br/>
-              Роман је испуњен апсурдом, филозофским и историјским слојевима, у којем се појављују разни ликови – од партијских функционера до мистичара – што додатно наглашава распад идеологија и преиспитивање „великих истина". Басара овим делом показује да човек, без обзира на идеолошка уверења, увек остаје у потрази за смислом и вишим бићем.
-            </p>
-            <Button
-              variant="secondary"
-              href="https://plus.cobiss.net/cobiss/sr/sr/search/cobib?lib=gbru&q=basara+svetislav"
+            <hr/><br/>
+            <a
+              href="https://www.rtv.rs/sr_ci/vojvodina/novi-sad/nadja-petrovic-meduze-zive-zauvek-dok-ih-ne-uhvate-(audio)_1658495.html"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Остала дела Светислава Басара у фонду библиотеке"
-              style={{ marginTop: '0.5rem' }}
+              className="container-text d-inline-block mt-3"
+              style={{ color: '#3f2c11', textDecoration: 'underline' }}
             >
-              Остала дела овог аутора
-            </Button>
+              Нађа Петровић — прилог РТВ-а (аудио)
+            </a>
+          </Col>
+          <Col xs={12} md={7} lg={7}>
+            <p className='container-text'>
+              <strong>Наша препорука</strong><br/>
+              <strong>Одељење за одрасле</strong><br/><br/>
+              <strong>Аутор:</strong> Нађа Петровић<br/>
+              <strong>Наслов:</strong> „Медузе живе заувек док их не ухвате"<br/><br/>
+              „Медузе живе заувек", роман Нађе Петровић, доноси аутентичан књижевни глас који истражује слојеве између сна и јаве. Почиње као тинејџерска драма одрастања, али убрзо прераста у узбудљиву интимну исповест.
+              <br/><br/>
+              Испричан у првом лицу, роман пружа суптилан увид у унутрашњи свет младе јунакиње Саре. То је прича о дубокој крхкости, о страху од смрти, али и страху од живота. Атмосфера је истовремено прожета нежном романтиком и сировом стварношћу одрастања.
+              <br/><br/>
+              Откријте зашто је овај роман право освежење међу делима савремене књижевности.
+            </p>
+         
           </Col>
         </Row>
 
             <Row><br/> <hr/>
               <Col md={3}>
-                <Nav variant="pills" className="flex-column" activeKey={activeKey} onSelect={setActiveKey}>
-                  <Nav.Item>
-                    <Nav.Link eventKey="jun" className="container-text">Јун</Nav.Link>
-                  </Nav.Item>
-                  <Nav.Item>
-                    <Nav.Link eventKey="jul" className="container-text">Јул</Nav.Link>
-                  </Nav.Item>
-                  <Nav.Item>
-                    <Nav.Link eventKey="avgust" className="container-text">Август</Nav.Link>
-                  </Nav.Item>
-                  <Nav.Item>
-                    <Nav.Link eventKey="septembar" className="container-text">Септембар</Nav.Link>
-                  </Nav.Item>
-                  <Nav.Item>
-                    <Nav.Link eventKey="oktobar" className="container-text">Октобар</Nav.Link>
-                  </Nav.Item>
-                  <Nav.Item>
-                    <Nav.Link eventKey="novembar" className="container-text">Новембар</Nav.Link>
-                  </Nav.Item>
-                  <Nav.Item>
-                    <Nav.Link eventKey="decembar" className='container-text'>Децембар</Nav.Link>
-                  </Nav.Item>
-                  <Nav.Item>
-                    <Nav.Link eventKey="januar" className='container-text'>Јануар</Nav.Link>
-                  </Nav.Item>
-                    <Nav.Item>
-                    <Nav.Link eventKey="februar" className='container-text'>Фебруар</Nav.Link>
-                  </Nav.Item>
-                  <Nav.Item>
-                    <Nav.Link eventKey="mart" className="container-text">Март</Nav.Link>
-                  </Nav.Item>
-                  {/* <Nav.Item>
-                    <Nav.Link eventKey="april" className="container-text">Април</Nav.Link>
-                  </Nav.Item> */}
-                   
+                <Nav variant="pills" className="flex-column" activeKey={activeKey} onSelect={(k) => k && setActiveKey(k)}>
+                  {RECOMMENDATION_ARCHIVE_MONTHS.map(([key, label]) => (
+                    <Nav.Item key={key}>
+                      <Nav.Link eventKey={key} className="container-text">{label}</Nav.Link>
+                    </Nav.Item>
+                  ))}
                 </Nav>
               </Col>
               <Col md={9}>
@@ -555,7 +643,7 @@ const Recommendations =()=>{
                   </Row>
                 )}
 
-                {/* {activeKey === 'april' && (
+                {activeKey === 'april' && (
                   <Row>
                     <Col xs={12} sm={12} md={4} lg={4} xl={4} className="text-center mt-4">
                       <a
@@ -601,7 +689,7 @@ const Recommendations =()=>{
                       </Button>
                     </Col>
                   </Row>
-                )} */}
+                )}
 
                 {activeKey === 'novembar' && (
                   <Row>

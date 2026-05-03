@@ -34,11 +34,12 @@
   },
   "scripts": {
     "start": "react-scripts --max_old_space_size=4096 start",
-         "build": "react-scripts build",
+    "build": "react-scripts build",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject",
     "optimize-images": "node scripts/optimize-images.js",
-    "build:optimized": "npm run optimize-images && npm run build"
+    "build:optimized": "npm run optimize-images && npm run build",
+    "generate-logo-assets": "node scripts/generate-logo-assets.js"
   },
   "eslintConfig": {
     "extends": [
@@ -66,6 +67,7 @@
     "imagemin-mozjpeg": "^10.0.0",
     "imagemin-pngquant": "^10.0.0",
     "imagemin-webp": "^8.0.0",
+    "sharp": "^0.34.5",
     "terser-webpack-plugin": "^5.3.14"
   }
 }

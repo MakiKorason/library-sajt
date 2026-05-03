@@ -1,10 +1,14 @@
-const CACHE_NAME = 'city-library-v1';
+const CACHE_NAME = 'city-library-v3';
 const urlsToCache = [
   '/',
   '/static/js/bundle.js',
   '/static/css/main.css',
   '/manifest.json',
-  '/logo.webp'
+  '/logo.webp',
+  '/logo-grb-izvor.webp',
+  '/pwa-icon-512.webp',
+  '/pwa-icon-192.webp',
+  '/pwa-icon-180.webp'
 ];
 
 // Install event - cache resources

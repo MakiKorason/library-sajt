@@ -227,8 +227,8 @@ const Home =()=> {
   <meta property="og:title" content="Градска библиотека Атанасије Стојковић Рума – званични сајт" />
   <meta property="og:description" content="Градска библиотека Атанасије Стојковић у Руми нуди широк избор књига, дигитални фонд, културне догађаје и образовне програме. Откријте нашу колекцију, учествујте у догађајима и истражите богату историју библиотеке." />
   <meta property="og:image" content="https://www.bibliotekaruma.rs/logo.webp" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
+  <meta property="og:image:width" content="256" />
+  <meta property="og:image:height" content="256" />
   <meta property="og:image:alt" content="Градска библиотека Атанасије Стојковић Рума" />
   <meta property="og:image:type" content="image/webp" />
   <meta property="og:url" content="https://www.bibliotekaruma.rs/" />
