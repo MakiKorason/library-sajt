@@ -335,7 +335,7 @@ const Home =()=> {
 <div className="carousel-item active">
           <img
             src={daniSlovenskePismenosti}
-            alt="Зграда библиотеке у Руми"
+            alt="Дани словенске писмености и културе"
             className="d-block w-100 image-carousel img-fluid"
             loading="lazy"
             width="1200"
