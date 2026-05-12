@@ -32,7 +32,7 @@ import saradnja3 from '../images/saradnja3.webp';
 import azbukvar from '../images/azbukovar.jpg'
 import 'react-calendar/dist/Calendar.css';
 import AnimatedCard from './Department/AnimatedCard'; 
-import daniSlovenskePismenosti from '../images/daniSlovenskePismenosti.jpg'
+import manifestacija from '../images/manifestacija.webp'
 import pokrajina from '../images/pokrajina.webp';
 import { Helmet } from "react-helmet-async";
 import audioKnjiga from '../images/audioKnjiga.png'
@@ -334,7 +334,7 @@ const Home =()=> {
 
 <div className="carousel-item active">
           <img
-            src={daniSlovenskePismenosti}
+            src={manifestacija}
             alt="Дани словенске писмености и културе"
             className="d-block w-100 image-carousel img-fluid"
             loading="lazy"
