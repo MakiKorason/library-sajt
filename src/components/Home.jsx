@@ -7,7 +7,7 @@ import matica from '../images/matica.webp';
 import narodna from '../images/narodna.webp';
 import ministarstvo from '../images/ministarstvo.webp';
 import opstina from '../images/opstina.webp';
-import biblioteka from '../images/biblioteka.webp';
+// import biblioteka from '../images/biblioteka.webp';
 import konkurs from '../images/konkurs.webp';
 import bombardovanje from '../images/bombardovanje.jpg';
 import muzej from '../images/muzej.webp';
@@ -32,6 +32,7 @@ import saradnja3 from '../images/saradnja3.webp';
 import azbukvar from '../images/azbukovar.jpg'
 import 'react-calendar/dist/Calendar.css';
 import AnimatedCard from './Department/AnimatedCard'; 
+import daniSlovenskePismenosti from '../images/daniSlovenskePismenosti.jpg'
 import pokrajina from '../images/pokrajina.webp';
 import { Helmet } from "react-helmet-async";
 import audioKnjiga from '../images/audioKnjiga.png'
@@ -302,7 +303,7 @@ const Home =()=> {
 
       {/* SLIDES */}
       <div className="carousel-inner">
-
+{/* 
         <div className="carousel-item active">
           <img
             src={biblioteka}
@@ -329,8 +330,19 @@ const Home =()=> {
             </p>
            
           </div>
-        </div>
+        </div> */}
 
+<div className="carousel-item active">
+          <img
+            src={daniSlovenskePismenosti}
+            alt="Зграда библиотеке у Руми"
+            className="d-block w-100 image-carousel img-fluid"
+            loading="lazy"
+            width="1200"
+            height="675"
+          />
+        
+        </div>
         <div className="carousel-item">
           <img
             src={digitalna}
