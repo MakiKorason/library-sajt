@@ -60,7 +60,7 @@ const Home =()=> {
   // State for image modal
   const [showImageModal, setShowImageModal] = useState(false);
   const [selectedImage, setSelectedImage] = useState({ src: '', alt: '', title: '' });
-  const [showAboutDetails, setShowAboutDetails] = useState(false);
+  // const [showAboutDetails, setShowAboutDetails] = useState(false);
 
   const tileClassName = useCallback(({ date, view }) => {
     if (view !== 'month' || !(date instanceof Date)) return;
