@@ -437,6 +437,27 @@ const Home =()=> {
 </Row>
 
 <Container className="container-library ms-auto mt-4 mb-4">
+<Col md={12} >
+<p className="container-text">📌 Обавештење о радном времену библиотеке
+
+поводом манифестације „Дани словенске писмености и културе“
+<br/><hr/> Радно време библиотеке биће измењено:
+<ul >
+<li>У петак, 15. маја, библиотека ће радити од 8.00 до 15.00 часова.</li>
+<li>У суботу, 16. маја, библиотека не ради.</li>
+<li>Током наредне недеље радно време је од 8.00 до 13.00 часова.</li>
+
+<li>У четвртак библиотека не ради поводом славе библиотеке.</li>
+<li>У суботу, 23. маја, библиотека не ради.</li>
+<li>Од понедељка, 25. маја, библиотека се враћа на уобичајено радно време.</li>
+</ul>
+
+Хвала на разумевању.</p>
+</Col>
+
+</Container>
+
+{/* <Container className="container-library ms-auto mt-4 mb-4">
   <Row>
     <Col md={12}>
       <h1 className="container-title" >
@@ -482,7 +503,7 @@ const Home =()=> {
       </div>
     </Col>
   </Row>
-</Container>
+</Container> */}
 
 {/* Kolаж сарадње са Матицом српском */}
 <Container className="container-library mt-4 mb-4">
