@@ -36,6 +36,7 @@ import manifestacija from '../images/manifestacija.webp'
 import pokrajina from '../images/pokrajina.webp';
 import { Helmet } from "react-helmet-async";
 import audioKnjiga from '../images/audioKnjiga.png'
+import program from '../images/program.jpg'
 // Bootstrap JS is imported in index.js
 
 
@@ -484,6 +485,15 @@ const Home =()=> {
 </Container>
 
 {/* Kolаж сарадње са Матицом српском */}
+<Container className="container-library mt-4 mb-4">
+  <Row className="justify-content-center">
+    <AnimatedImage
+      src={program}
+      className="img-fluid d-block mx-auto"
+    />
+  </Row>
+</Container>
+
 
 <Container className=" container-library ms-auto mt-4 mb-4">
       
@@ -513,7 +523,8 @@ const Home =()=> {
            
           />
         </Col>
-
+        
+        
         {/* Десно – текст */}
         <Col md={6}>
         <p className='container-text'>
