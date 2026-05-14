@@ -35,6 +35,7 @@ import AnimatedCard from './Department/AnimatedCard';
 import manifestacija from '../images/manifestacija.webp'
 import pokrajina from '../images/pokrajina.webp';
 import { Helmet } from "react-helmet-async";
+import { FaSearchPlus } from 'react-icons/fa';
 import audioKnjiga from '../images/audioKnjiga.png'
 import program from '../images/program.jpg'
 // Bootstrap JS is imported in index.js
@@ -59,7 +60,7 @@ const Home =()=> {
   
   // State for image modal
   const [showImageModal, setShowImageModal] = useState(false);
-  const [selectedImage, setSelectedImage] = useState({ src: '', alt: '', title: '' });
+  const [selectedImage, setSelectedImage] = useState({ src: '', alt: '', title: '', size: 'lg' });
   // const [showAboutDetails, setShowAboutDetails] = useState(false);
 
   const tileClassName = useCallback(({ date, view }) => {
@@ -150,12 +151,12 @@ const Home =()=> {
 
   const handleCloseImageModal = () => {
     setShowImageModal(false);
-    setSelectedImage({ src: '', alt: '', title: '' });
+    setSelectedImage({ src: '', alt: '', title: '', size: 'lg' });
   };
 
-  const handleImageClick = (image, title) => {
+  const handleImageClick = (image, title, modalSize = 'lg') => {
     setModalImage(image);
-    setSelectedImage({ src: image, alt: title, title: title });
+    setSelectedImage({ src: image, alt: title, title, size: modalSize });
     setShowImageModal(true);
   };
 
@@ -351,7 +352,7 @@ const Home =()=> {
             className="d-block w-100 image-carousel img-fluid clickable-image"
             loading="lazy"
             onClick={() =>
-              handleImageClick(digitalna, "Атанасије Стојковић", "Атанасије Стојковић")
+              handleImageClick(digitalna, 'Атанасије Стојковић')
             }
           />
           <div className="carousel-caption">
@@ -379,7 +380,7 @@ const Home =()=> {
             className="d-block w-100 image-carousel img-fluid clickable-image"
             loading="lazy"
             onClick={() =>
-              handleImageClick(karoselSlika, "Култура за све", "Култура за све")
+              handleImageClick(karoselSlika, 'Култура за све')
             }
           />
           <div className="carousel-caption">
@@ -406,11 +407,7 @@ const Home =()=> {
             className="d-block w-100 image-carousel img-fluid clickable-image"
             loading="lazy"
             onClick={() =>
-              handleImageClick(
-                books,
-                "ОМИЉЕНЕ КЊИГЕ НАШИХ КОРИСНИКА",
-                "ОМИЉЕНЕ КЊИГЕ НАШИХ КОРИСНИКА"
-              )
+              handleImageClick(books, 'ОМИЉЕНЕ КЊИГЕ НАШИХ КОРИСНИКА')
             }
           />
           <div className="carousel-caption">
@@ -506,12 +503,32 @@ const Home =()=> {
 </Container> */}
 
 {/* Kolаж сарадње са Матицом српском */}
+{/* Колаж сарадње са Матицом српском */}
 <Container className="container-library mt-4 mb-4">
   <Row className="justify-content-center">
-    <AnimatedImage
-      src={program}
-      className="img-fluid d-block mx-auto"
-    />
+    <Col xs={12} className="text-center">
+      <Suspense fallback={<div className="container-text py-4">Учитавање слике…</div>}>
+        <AnimatedImage
+          src={program}
+          alt="Програм"
+          className="img-fluid d-block mx-auto clickable-image"
+          style={{ maxWidth: 'min(100%, 960px)', cursor: 'pointer' }}
+          title="Клик за увећање"
+          onClick={() => handleImageClick(program, 'Програм', 'xl')}
+        />
+      </Suspense>
+      <Button
+        type="button"
+        variant="secondary"
+        className="mt-3 d-inline-flex align-items-center gap-2"
+        style={{ backgroundColor: '#3f2c11', borderColor: '#3f2c11', color: '#f3f2ee' }}
+        onClick={() => handleImageClick(program, 'Програм', 'xl')}
+        aria-label="Прикажи слику програма у већој величини"
+      >
+        <FaSearchPlus aria-hidden />
+        Увећај слику програма
+      </Button>
+    </Col>
   </Row>
 </Container>
 
@@ -944,6 +961,7 @@ aria-label="Преузми статут установе Градске библ
         imageSrc={selectedImage.src}
         imageAlt={selectedImage.alt}
         title={selectedImage.title}
+        size={selectedImage.size || 'lg'}
       />
 
     </>

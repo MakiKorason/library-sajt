@@ -2,13 +2,13 @@ import React from 'react';
 import { Modal } from 'react-bootstrap';
 import './ImageModal.css';
 
-const ImageModal = ({ show, onHide, imageSrc, imageAlt, title }) => {
+const ImageModal = ({ show, onHide, imageSrc, imageAlt, title, size = 'lg' }) => {
   return (
     <Modal 
       show={show} 
       onHide={onHide} 
       centered 
-      size="lg"
+      size={size}
       className="image-modal"
     >
       <Modal.Header closeButton style={{backgroundColor: '#f3f2ee', borderBottom: '2px solid #ddd'}}>

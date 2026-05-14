@@ -20,6 +20,10 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.image-modal .modal-dialog.modal-xl .modal-image {
+  max-height: 88vh;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .image-modal .modal-dialog {

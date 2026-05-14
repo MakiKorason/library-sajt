@@ -34,6 +34,20 @@ const GOOGLE_TRANSLATE_SCRIPT_ID = 'google-translate-script';
 const LANGUAGE_STORAGE_KEY = 'siteLanguage';
 const GOOGLE_TRANSLATE_COOKIE_NAME = 'googtrans';
 
+/** Ukloni googtrans — vrednost /sr/sr ne vraća pouzdano original i često ostavlja „pola“ prevoda. */
+function clearTranslateCookie() {
+  const expire = 'Thu, 01 Jan 1970 00:00:00 GMT';
+  try {
+    document.cookie = `${GOOGLE_TRANSLATE_COOKIE_NAME}=;path=/;expires=${expire};max-age=0`;
+    const host = window.location.hostname;
+    if (host && host !== 'localhost') {
+      document.cookie = `${GOOGLE_TRANSLATE_COOKIE_NAME}=;path=/;domain=.${host};expires=${expire};max-age=0`;
+    }
+  } catch {
+    // ignore
+  }
+}
+
 function getInitialLanguage() {
   try {
     return localStorage.getItem(LANGUAGE_STORAGE_KEY) || 'sr';
@@ -59,6 +73,10 @@ function InnerApp() {
   };
 
   const setTranslateCookie = (targetLanguage) => {
+    if (targetLanguage === 'sr') {
+      clearTranslateCookie();
+      return;
+    }
     const cookieValue = `/sr/${targetLanguage}`;
     try {
       document.cookie = `${GOOGLE_TRANSLATE_COOKIE_NAME}=${cookieValue};path=/;max-age=31536000`;
@@ -128,8 +146,11 @@ function InnerApp() {
         return false;
       }
 
-      if (select.value !== language) {
-        select.value = language;
+      // Za izvorni srpski Google koristi praznu vrednost, ne "sr"; pogrešna vrednost daje čudan prevod (npr. ruski).
+      const desiredValue = language === 'sr' ? '' : language;
+
+      if (select.value !== desiredValue) {
+        select.value = desiredValue;
         select.dispatchEvent(new Event('change'));
         select.dispatchEvent(new Event('input'));
       }
@@ -151,6 +172,8 @@ function InnerApp() {
 
   return (
     <>
+      {/* Mora postojati u DOM-u da bi se TranslateElement inicijalizovao (ranije je bio samo u zakomentarisanom top-baru). */}
+      <div id="google_translate_element" aria-hidden="true" />
 {/* 
       <div className="top-bar">
         <div className="bar-content">
